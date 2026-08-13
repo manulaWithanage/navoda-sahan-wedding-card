@@ -318,7 +318,7 @@ body {
    ========================================== */
 .countdown-section {
   position: relative;
-  background: linear-gradient(135deg,#5C3A24 0%,#3B2517 100%);
+  background: linear-gradient(135deg, rgba(92, 58, 36, 0.88) 0%, rgba(59, 37, 23, 0.92) 100%), url('assets/line_art.jpg') center/cover no-repeat;
   color: #F6EFDD;
   padding: 60px 24px;
   text-align: center;
@@ -653,7 +653,7 @@ body {
 .bottom-banner-section { margin-bottom: 40px; }
 
 .bottom-mocha-card {
-  background: linear-gradient(135deg,#5C3A24 0%,#3B2517 100%);
+  background: linear-gradient(135deg, rgba(92, 58, 36, 0.88) 0%, rgba(59, 37, 23, 0.92) 100%), url('assets/line_art.jpg') center/cover no-repeat;
   color: #F6EFDD;
   padding: 48px 24px;
   border-radius: 28px;
