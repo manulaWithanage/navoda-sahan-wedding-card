@@ -17,15 +17,15 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Mea+Culpa&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-  <!-- Floating Golden Border Frame -->
-  <div class="viewport-border" aria-hidden="true"></div>
+  <!-- Fixed Flat-Lay Mocha Backdrop -->
+  <div class="mocha-fixed-backdrop" aria-hidden="true"></div>
 
   <!-- Audio Element (Gentle Ambient Music) -->
   <audio id="bg-music" loop preload="auto">
@@ -76,7 +76,7 @@
   <!-- Falling Petals Canvas -->
   <canvas id="petals-canvas" class="petals-canvas" aria-hidden="true"></canvas>
 
-  <!-- Sticky Navbar -->
+  <!-- Sticky Navbar (Mocha Style) -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">
@@ -96,45 +96,50 @@
     </div>
   </header>
 
-  <!-- Main Content Wrapper -->
+  <!-- Main Content Container -->
   <main class="main-content">
     
-    <!-- Hero / Main Invitation Card (Pure CSS Mocha Arch) -->
+    <!-- Hero Section (Mocha Seal 2-Column Desktop Grid) -->
     <section id="hero" class="hero-section">
-      <div class="mocha-arch-card">
-        <div class="arch-top-flourish" aria-hidden="true">
-          <svg viewBox="0 0 100 40" fill="currentColor">
-            <path d="M50 0 C40 15, 20 20, 0 20 C20 20, 40 25, 50 40 C60 25, 80 20, 100 20 C80 20, 60 15, 50 0 Z" opacity="0.6"/>
-          </svg>
-        </div>
-
-        <p class="invite-header-title">TOGETHER WITH OUR FAMILIES</p>
-        <p class="invite-header-subtitle">WE INVITE YOU TO CELEBRATE OUR MARRIAGE CEREMONY</p>
+      <div class="hero-grid">
         
-        <div class="couple-title-box">
-          <h1 class="couple-names">
-            <span class="name-groom">Sahan</span>
+        <!-- Left Column: Translucent Invitation Text Card -->
+        <div class="hero-text-card">
+          <span class="hero-tagline">TOGETHER WITH THEIR FAMILIES</span>
+          
+          <h1 class="hero-couple-names">
+            <span class="name-line">SAHAN</span>
             <span class="name-and">and</span>
-            <span class="name-bride">Navoda</span>
+            <span class="name-line">NAVODA</span>
           </h1>
+
+          <p class="hero-invite-text">
+            REQUEST THE HONOUR OF YOUR PRESENCE AT THE CELEBRATION OF THEIR MARRIAGE
+          </p>
+
+          <div class="diamond-divider" aria-hidden="true">
+            <span class="line"></span>
+            <span class="diamond">♦</span>
+            <span class="line"></span>
+          </div>
+
+          <p class="hero-wedding-day">THURSDAY, 24TH OF SEPTEMBER 2026</p>
+          <p class="hero-wedding-venue">NOOIT GEDACHT HERITAGE HOTEL</p>
+          <p class="hero-wedding-location">GALLE, SRI LANKA</p>
+
+          <div class="hero-footer-bar">
+            <span>DRESS IN YOUR BEST</span>
+            <span class="dot">•</span>
+            <span>CELEBRATE WITH US</span>
+          </div>
         </div>
 
-        <div class="olive-heart-divider" aria-hidden="true">
-          <span class="divider-line"></span>
-          <span>🌿 ♥ 🌿</span>
-          <span class="divider-line"></span>
+        <!-- Right Column: Arched Couple Photo Card Frame -->
+        <div class="hero-photo-frame">
+          <div class="inner-arch-border" aria-hidden="true"></div>
+          <img src="assets/couple1.jpg" alt="Sahan and Navoda" class="hero-photo-img">
         </div>
 
-        <p class="wedding-day-title">THURSDAY</p>
-        <p class="wedding-date-text">24TH OF SEPTEMBER 2026</p>
-        <p class="wedding-venue-text">NOOIT GEDACHT HERITAGE HOTEL</p>
-        <p class="wedding-location-text">GALLE, SRI LANKA</p>
-
-        <div class="footer-tagline">
-          <span>DRESS IN YOUR BEST</span>
-          <span>•</span>
-          <span>CELEBRATE WITH US</span>
-        </div>
       </div>
     </section>
 
@@ -169,10 +174,11 @@
       </div>
     </section>
 
-    <!-- Countdown Section -->
+    <!-- Mocha Countdown Section (Exact Mocha-Seal Style) -->
     <section id="countdown" class="countdown-section scroll-reveal">
+      <div class="countdown-inner-border" aria-hidden="true"></div>
       <div class="countdown-container">
-        <span class="countdown-sub">We Are Getting</span>
+        <span class="countdown-sub">We are getting</span>
         <h2 class="countdown-heading">MARRIED</h2>
         
         <div class="countdown-divider">
@@ -204,27 +210,19 @@
           </div>
         </div>
 
-        <p class="countdown-target">COUNTING DOWN TO THURSDAY, 24TH OF SEPTEMBER 2026</p>
+        <p class="countdown-target">UNTIL THURSDAY, 24TH OF SEPTEMBER 2026</p>
       </div>
     </section>
 
-    <!-- RSVP & Details Section (Pure CSS Mocha Arch Card) -->
+    <!-- Details & RSVP Section (Mocha Seal 2-Column Grid) -->
     <section id="rsvp" class="rsvp-section scroll-reveal">
-      <div class="mocha-arch-card">
-        <h2 class="rsvp-top-title">WE CAN'T WAIT TO</h2>
-        <p class="rsvp-script-title">celebrate this special day</p>
-        <p class="rsvp-top-title">WITH YOU!</p>
+      <div class="rsvp-grid">
+        
+        <!-- Left Column: Schedule & Direct Contact Info -->
+        <div class="details-card">
+          <span class="rsvp-sub">Join Us In Celebrating</span>
+          <h2 class="rsvp-title">EVENT DETAILS</h2>
 
-        <div class="olive-heart-divider" aria-hidden="true">
-          <span class="divider-line"></span>
-          <span>🌿 ♥ 🌿</span>
-          <span class="divider-line"></span>
-        </div>
-
-        <div class="rsvp-deadline-text">KINDLY RSVP BY 5TH SEPTEMBER 2026 (2026.09.05)</div>
-
-        <!-- Schedule & RSVP Form -->
-        <div class="rsvp-body-content">
           <div class="schedule-box">
             <div class="schedule-item">
               <span class="schedule-label">SIGNING CEREMONY:</span>
@@ -237,7 +235,32 @@
             </div>
           </div>
 
-          <!-- RSVP Form -->
+          <div class="rsvp-deadline-badge">
+            <span>KINDLY RSVP BY 5TH SEPTEMBER 2026 (2026.09.05)</span>
+          </div>
+
+          <div class="contact-numbers-container">
+            <p class="contact-title">CONTACT FOR INQUIRIES & DIRECT RSVP</p>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <span class="contact-role">Bride (Navoda)</span>
+                <a href="tel:0719853878" class="contact-link">📞 071 985 3878</a>
+                <a href="https://wa.me/94719853878?text=Hi%20Navoda,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
+              </div>
+              <div class="contact-card">
+                <span class="contact-role">Groom (Sahan)</span>
+                <a href="tel:0710121966" class="contact-link">📞 071 012 1966</a>
+                <a href="https://wa.me/94710121966?text=Hi%20Sahan,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive RSVP Form Card -->
+        <div class="rsvp-form-card">
+          <h2 class="form-title">ONLINE RSVP</h2>
+          <p class="form-sub">Please fill in your details to confirm your attendance</p>
+
           <form id="rsvp-form" class="rsvp-form">
             <div class="form-group">
               <label for="guest-name" class="form-label">YOUR FULL NAME</label>
@@ -265,7 +288,7 @@
 
             <div class="form-group">
               <label for="guest-message" class="form-label">SPECIAL WISHES / MESSAGE (OPTIONAL)</label>
-              <textarea id="guest-message" name="message" class="form-textarea" rows="2" placeholder="Send a note to Sahan & Navoda..."></textarea>
+              <textarea id="guest-message" name="message" class="form-textarea" rows="3" placeholder="Send a note to Sahan & Navoda..."></textarea>
             </div>
 
             <button type="submit" class="submit-btn" id="submit-btn">
@@ -275,27 +298,8 @@
 
             <div id="rsvp-status" class="rsvp-status"></div>
           </form>
-
-          <!-- Direct Contact Numbers -->
-          <div class="contact-numbers-container">
-            <p class="contact-title">CONTACT FOR INQUIRIES & DIRECT RSVP</p>
-            <div class="contact-cards">
-              <div class="contact-card">
-                <span class="contact-role">Bride (Navoda)</span>
-                <a href="tel:0719853878" class="contact-link">📞 071 985 3878</a>
-                <a href="https://wa.me/94719853878?text=Hi%20Navoda,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
-              </div>
-              <div class="contact-card">
-                <span class="contact-role">Groom (Sahan)</span>
-                <a href="tel:0710121966" class="contact-link">📞 071 012 1966</a>
-                <a href="https://wa.me/94710121966?text=Hi%20Sahan,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
-              </div>
-            </div>
-          </div>
-
-          <p class="rsvp-footer-script">thank you for being a part of our beginning</p>
-          <div class="heart-line-flourish">♡</div>
         </div>
+
       </div>
     </section>
 
