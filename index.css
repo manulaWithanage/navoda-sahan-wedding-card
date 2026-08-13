@@ -1,0 +1,105 @@
+/* Design Tokens */
+:root {
+  --bg-creme: #FDFBF7;
+  --bg-card: #FAF6EF;
+  --gold-primary: #C5A059;
+  --gold-dark: #9A7B38;
+  --gold-light: #E5C98B;
+  --text-dark: #2B2625;
+  --text-muted: #6B625B;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-creme);
+  color: var(--text-dark);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Viewport Border */
+.viewport-border {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Card Wrapper */
+.card-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 60px 0;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: var(--gold-dark);
+  margin-bottom: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.divider .line {
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+}
+
+.divider .diamond {
+  color: var(--gold-primary);
+  font-size: 0.7rem;
+}
+
+.couple-names {
+  font-family: var(--font-script);
+  font-size: 3.5rem;
+  color: var(--text-dark);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.couple-names .name {
+  display: inline-block;
+}
+
+.couple-names .ampersand {
+  color: var(--gold-primary);
+  margin: 0 10px;
+}
+
+.invite-text {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
