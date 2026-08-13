@@ -461,11 +461,20 @@ body {
   margin: 18px 0;
 }
 
+.wedding-day-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+
 .wedding-date-text {
   font-family: var(--font-sans);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 6px;
+  letter-spacing: 4px;
   color: var(--text-dark);
   margin-bottom: 12px;
 }
@@ -502,7 +511,102 @@ body {
 }
 
 /* ==========================================
-   5. COUNTDOWN TIMER SECTION
+   5. A WALK THROUGH TIME (STORY / PHOTOS)
+   ========================================== */
+.story-section {
+  background: var(--bg-card);
+  border: 1px solid rgba(199, 162, 75, 0.3);
+  border-radius: 20px;
+  padding: 50px 24px;
+  text-align: center;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.story-sub {
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  color: var(--gold-dark);
+  display: block;
+}
+
+.story-heading {
+  font-family: var(--font-cinzel);
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  color: var(--text-dark);
+  margin-top: -6px;
+}
+
+.story-desc {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 10px 0 30px 0;
+}
+
+.story-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery-card {
+  background: var(--bg-creme);
+  border: 1px solid rgba(199, 162, 75, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+}
+
+.photo-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.photo-caption {
+  padding: 16px;
+  text-align: center;
+}
+
+.caption-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--bg-mocha);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.caption-text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   6. COUNTDOWN TIMER SECTION
    ========================================== */
 .countdown-section {
   background: linear-gradient(135deg, #5C3A24 0%, #3B2517 100%);
@@ -600,7 +704,7 @@ body {
 }
 
 /* ==========================================
-   6. RSVP & DETAILS CARD (Matching Image 2)
+   7. RSVP & DETAILS CARD (Matching Image 2)
    ========================================== */
 .rsvp-top-title {
   font-family: var(--font-sans);
@@ -639,7 +743,7 @@ body {
 
 .schedule-label {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--text-dark);
@@ -648,29 +752,14 @@ body {
 
 .schedule-time {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-}
-
-.schedule-long {
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--text-dark);
-}
-
-.schedule-sub {
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
   letter-spacing: 1.5px;
-  color: var(--text-muted);
+  color: var(--gold-dark);
 }
 
 .schedule-badge {
-  margin: 10px 0;
+  margin: 8px 0;
   font-size: 0.9rem;
 }
 
@@ -749,35 +838,72 @@ body {
   box-shadow: 0 10px 22px rgba(59, 37, 23, 0.4);
 }
 
-.whatsapp-rsvp-box {
-  margin-top: 18px;
+/* Contact Numbers Container */
+.contact-numbers-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(199, 162, 75, 0.4);
   text-align: center;
 }
 
-.or-text {
+.contact-title {
   font-family: var(--font-sans);
   font-size: 0.6rem;
+  font-weight: 700;
   letter-spacing: 2px;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 8px;
+  color: var(--gold-dark);
+  margin-bottom: 14px;
 }
 
-.wa-btn {
-  display: inline-block;
+.contact-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  background: rgba(253, 251, 247, 0.85);
+  border: 1px solid rgba(199, 162, 75, 0.3);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 180px;
+}
+
+.contact-role {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+}
+
+.contact-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bg-mocha);
+  text-decoration: none;
+}
+
+.contact-wa {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
   font-weight: 600;
   color: #128C7E;
   text-decoration: none;
-  padding: 8px 16px;
-  border: 1px solid rgba(18, 140, 126, 0.4);
-  border-radius: 20px;
-  transition: background 0.3s ease;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(18, 140, 126, 0.08);
+  margin-top: 2px;
 }
 
-.wa-btn:hover {
-  background: rgba(18, 140, 126, 0.1);
+.contact-wa:hover {
+  background: rgba(18, 140, 126, 0.18);
 }
 
 .rsvp-status {
@@ -802,7 +928,7 @@ body {
 }
 
 /* ==========================================
-   7. LOCATION SECTION
+   8. LOCATION SECTION
    ========================================== */
 .venue-section {
   background: var(--bg-card);
@@ -857,19 +983,20 @@ body {
   padding: 12px 24px;
   border-radius: 30px;
   border: 1px solid var(--gold-primary);
-  background: transparent;
-  color: var(--bg-mocha);
+  background: var(--gold-primary);
+  color: #fff;
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(199, 162, 75, 0.3);
 }
 
 .map-btn:hover {
-  background: var(--gold-primary);
-  color: #fff;
+  background: var(--gold-dark);
+  transform: translateY(-1px);
 }
 
 /* Footer */
@@ -894,7 +1021,7 @@ body {
 }
 
 /* ==========================================
-   8. RESPONSIVE BREAKPOINTS
+   9. RESPONSIVE BREAKPOINTS
    ========================================== */
 @media (max-width: 600px) {
   .nav-links {
