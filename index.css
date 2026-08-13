@@ -622,17 +622,18 @@ body {
   background: rgba(251, 248, 241, 0.96);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(199, 162, 75, 0.4);
-  border-radius: 320px 320px 28px 28px;
-  padding: 85px 48px 48px 48px;
-  max-width: 680px;
+  border-radius: 340px 340px 32px 32px;
+  padding: 130px 48px 54px 48px;
+  max-width: 740px;
   margin: 0 auto;
   box-shadow: 0 20px 50px rgba(70,40,30,0.1);
+  overflow: hidden;
 }
 
 .rsvp-arch-card .inner-arch-border {
   position: absolute;
   inset: 12px;
-  border-radius: 308px 308px 20px 20px;
+  border-radius: 328px 328px 24px 24px;
   border: 1px solid rgba(199, 162, 75, 0.35);
   pointer-events: none;
 }
@@ -643,6 +644,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .form-group {
