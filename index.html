@@ -3,57 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navoda & Sahan - Wedding Invitation</title>
+  <title>Sahan & Navoda - Wedding Invitation | 24th September 2026</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Wedding Invitation of Navoda & Sahan.">
-  <meta name="author" content="Navoda & Sahan">
+  <meta name="description" content="Wedding Invitation of Sahan & Navoda at Nooit Gedacht Heritage Hotel, Galle, Sri Lanka on 24th September 2026.">
+  <meta name="author" content="Sahan & Navoda">
   
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sahan & Navoda - Wedding Invitation">
+  <meta property="og:description" content="We invite you to celebrate our marriage ceremony on 24th September 2026 at Nooit Gedacht Heritage Hotel, Galle.">
+  <meta property="og:type" content="website">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-  <!-- Floating Golden Border -->
-  <div class="viewport-border" aria-hidden="true"></div>
+  <!-- Audio Element (Gentle Ambient Music) -->
+  <audio id="bg-music" loop preload="auto">
+    <audio-source></audio-source>
+  </audio>
 
-  <!-- Main Card Container -->
-  <div class="card-wrapper">
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-content">
-        <p class="subtitle fade-in">TOGETHER WITH THEIR FAMILIES</p>
+  <!-- Split Door Entrance Gate Overlay -->
+  <div id="envelope-gate" class="envelope-gate" role="dialog" aria-label="Tap to open the invitation">
+    <div class="door-left" id="door-left">
+      <div class="door-texture"></div>
+      <div class="door-handle-left"></div>
+    </div>
+    <div class="door-right" id="door-right">
+      <div class="door-texture"></div>
+      <div class="door-handle-right"></div>
+    </div>
+    <div class="top-gold-bar"></div>
+
+    <div class="gate-content">
+      <div class="gate-card">
+        <div class="gate-heart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#C7A24B" stroke="none">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <p class="gate-tagline">YOU'RE INVITED</p>
+        <h2 class="gate-couple-names">
+          <span>Sahan</span>
+          <span class="gate-amp">&</span>
+          <span>Navoda</span>
+        </h2>
+        <p class="gate-subtext">Request the honour of your presence</p>
         
-        <div class="divider fade-in" aria-hidden="true">
-          <span class="line"></span>
-          <span class="diamond">♦</span>
-          <span class="line"></span>
+        <button type="button" class="wax-seal-btn" id="wax-seal-btn" aria-label="Open wedding invitation">
+          <span class="shine-effect"></span>
+          <span class="inner-border"></span>
+          <svg class="sparkle-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v18m-9-9h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+          </svg>
+          <span class="btn-text">OPEN INVITATION</span>
+        </button>
+
+        <p class="gate-tap-hint">TAP TO BEGIN</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Falling Petals Canvas -->
+  <canvas id="petals-canvas" class="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        S<span class="amp">&</span>N
+      </a>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#events">Schedule</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#venue">Location</a>
+      </nav>
+      <button class="music-toggle" id="music-toggle" aria-label="Toggle music">
+        <span class="music-icon" id="music-icon">🎵</span>
+        <span class="music-label" id="music-label">MUSIC</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Card Container Wrapper -->
+  <main class="main-content">
+    
+    <!-- Hero / Main Invitation Section (Matching Image 1 Design) -->
+    <section id="hero" class="hero-section">
+      <div class="card-frame card-main-frame">
+        <div class="card-bg-overlay"></div>
+        <div class="card-content">
+          <p class="invite-header-title">TOGETHER WITH OUR FAMILIES</p>
+          <p class="invite-header-subtitle">WE INVITE YOU TO CELEBRATE OUR MARRIAGE CEREMONY</p>
+          
+          <div class="couple-title-box">
+            <h1 class="couple-names">
+              <span class="name-groom">Sahan</span>
+              <span class="name-and">and</span>
+              <span class="name-bride">Navoda</span>
+            </h1>
+          </div>
+
+          <div class="olive-heart-divider" aria-hidden="true">
+            <span class="branch-left">🌿</span>
+            <span class="heart-center">♥</span>
+            <span class="branch-right">🌿</span>
+          </div>
+
+          <p class="wedding-date-text">2026 . 09 . 24</p>
+          <p class="wedding-venue-text">NOOIT GEDACHT HERITAGE HOTEL</p>
+          <p class="wedding-location-text">GALLE, SRI LANKA</p>
+
+          <div class="footer-tagline">
+            <span>DRESS IN YOUR BEST</span>
+            <span class="tagline-dot">•</span>
+            <span>CELEBRATE WITH US</span>
+          </div>
         </div>
-
-        <h1 class="couple-names fade-in">
-          <span class="name">Navoda</span>
-          <span class="ampersand">&</span>
-          <span class="name">Sahan</span>
-        </h1>
-
-        <div class="divider fade-in" aria-hidden="true">
-          <span class="line"></span>
-          <span class="diamond">♦</span>
-          <span class="line"></span>
-        </div>
-
-        <p class="invite-text fade-in">
-          Request the honour of your presence<br>
-          at the celebration of their marriage
-        </p>
       </div>
     </section>
-  </div>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section scroll-reveal">
+      <div class="countdown-container">
+        <span class="countdown-sub">We Are Getting</span>
+        <h2 class="countdown-heading">MARRIED</h2>
+        
+        <div class="countdown-divider">
+          <span class="line"></span>
+          <span class="star">✦</span>
+          <span class="line"></span>
+        </div>
+
+        <div class="timer-grid">
+          <div class="timer-card">
+            <span id="days" class="timer-val">00</span>
+            <span class="timer-line"></span>
+            <span class="timer-lbl">DAYS</span>
+          </div>
+          <div class="timer-card">
+            <span id="hours" class="timer-val">00</span>
+            <span class="timer-line"></span>
+            <span class="timer-lbl">HOURS</span>
+          </div>
+          <div class="timer-card">
+            <span id="minutes" class="timer-val">00</span>
+            <span class="timer-line"></span>
+            <span class="timer-lbl">MINUTES</span>
+          </div>
+          <div class="timer-card">
+            <span id="seconds" class="timer-val">00</span>
+            <span class="timer-line"></span>
+            <span class="timer-lbl">SECONDS</span>
+          </div>
+        </div>
+
+        <p class="countdown-target">COUNTING DOWN TO THURSDAY, SEPTEMBER 24, 2026</p>
+      </div>
+    </section>
+
+    <!-- RSVP & Schedule Section (Matching Image 2 Design) -->
+    <section id="rsvp" class="rsvp-section scroll-reveal">
+      <div class="card-frame card-rsvp-frame">
+        <div class="card-bg-overlay"></div>
+        <div class="card-content">
+          <h2 class="rsvp-top-title">WE CAN'T WAIT TO</h2>
+          <p class="rsvp-script-title">celebrate this special day</p>
+          <p class="rsvp-top-title">WITH YOU!</p>
+
+          <div class="olive-heart-divider" aria-hidden="true">
+            <span class="branch-left">🌿</span>
+            <span class="heart-center">♥</span>
+            <span class="branch-right">🌿</span>
+          </div>
+
+          <p class="rsvp-deadline-text">KINDLY RSVP BY 2026.09.15</p>
+
+          <!-- Interactive Form & Schedule -->
+          <div class="rsvp-body-content">
+            <div class="schedule-box">
+              <div class="schedule-item">
+                <span class="schedule-label">SIGNING CEREMONY:</span>
+                <span class="schedule-time">10:00 AM</span>
+              </div>
+              <div class="schedule-badge">
+                <span class="olive-circle">🌿</span>
+              </div>
+              <div class="schedule-item">
+                <p class="schedule-long">THE CELEBRATION CONTINUES</p>
+                <p class="schedule-sub">FROM 10:00 AM UP UNTIL 3:00 PM</p>
+              </div>
+            </div>
+
+            <!-- RSVP Form -->
+            <form id="rsvp-form" class="rsvp-form">
+              <div class="form-group">
+                <label for="guest-name" class="form-label">YOUR FULL NAME</label>
+                <input type="text" id="guest-name" name="name" class="form-input" placeholder="e.g. Mr. & Mrs. Perera" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label for="guest-count" class="form-label">NUMBER OF GUESTS</label>
+                  <select id="guest-count" name="guest_count" class="form-select">
+                    <option value="1 Guest">1 Guest</option>
+                    <option value="2 Guests" selected>2 Guests</option>
+                    <option value="3 Guests">3 Guests</option>
+                    <option value="4+ Guests">4+ Guests</option>
+                  </select>
+                </div>
+                <div class="form-group flex-1">
+                  <label for="attendance" class="form-label">ATTENDANCE</label>
+                  <select id="attendance" name="attendance" class="form-select">
+                    <option value="Joyfully Accepts">Joyfully Accepts</option>
+                    <option value="Regretfully Declines">Regretfully Declines</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="guest-message" class="form-label">SPECIAL WISHES / MESSAGE (OPTIONAL)</label>
+                <textarea id="guest-message" name="message" class="form-textarea" rows="2" placeholder="Send a note to Sahan & Navoda..."></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn" id="submit-btn">
+                <span class="btn-shine"></span>
+                <span class="btn-txt">SUBMIT RSVP</span>
+              </button>
+
+              <div id="rsvp-status" class="rsvp-status"></div>
+            </form>
+
+            <div class="whatsapp-rsvp-box">
+              <span class="or-text">OR</span>
+              <a href="https://wa.me/?text=Hi%20Sahan%20%26%20Navoda,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="wa-btn">
+                <span>💬 RSVP via WhatsApp</span>
+              </a>
+            </div>
+
+            <p class="rsvp-footer-script">thank you for being a part of our beginning</p>
+            <div class="heart-line-flourish">♡</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="venue" class="venue-section scroll-reveal">
+      <div class="venue-card">
+        <h2 class="venue-title">VENUE & LOCATION</h2>
+        <div class="venue-divider">✦ ✦ ✦</div>
+        <h3 class="venue-name">Nooit Gedacht Heritage Hotel</h3>
+        <p class="venue-address">Matara Road, Unawatuna, Galle, Sri Lanka</p>
+        <p class="venue-desc">A magnificent 300-year-old Dutch colonial heritage estate nestled amidst lush gardens in Galle, Sri Lanka.</p>
+        
+        <div class="venue-actions">
+          <a href="https://maps.google.com/?q=Nooit+Gedacht+Heritage+Hotel+Galle+Sri+Lanka" target="_blank" rel="noopener" class="map-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            <span>GET DIRECTIONS ON GOOGLE MAPS</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-names">Sahan & Navoda</p>
+    <p class="footer-copy">24th September 2026 • Nooit Gedacht Heritage Hotel, Galle</p>
+  </footer>
 
   <script src="app.js"></script>
 </body>
