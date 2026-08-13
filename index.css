@@ -618,31 +618,72 @@ body {
 .rsvp-section { margin-bottom: 70px; }
 
 .rsvp-arch-card {
-  background: rgba(251, 248, 241, 0.94);
+  position: relative;
+  background: rgba(251, 248, 241, 0.96);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(199, 162, 75, 0.35);
-  border-radius: 220px 220px 28px 28px;
-  padding: 60px 36px 40px 36px;
-  max-width: 580px;
+  border: 1px solid rgba(199, 162, 75, 0.4);
+  border-radius: 320px 320px 28px 28px;
+  padding: 85px 48px 48px 48px;
+  max-width: 680px;
   margin: 0 auto;
-  box-shadow: 0 16px 40px rgba(70,40,30,0.08);
+  box-shadow: 0 20px 50px rgba(70,40,30,0.1);
 }
 
-.rsvp-form { display: flex; flex-direction: column; gap: 16px; }
-.form-group { display: flex; flex-direction: column; gap: 4px; }
-.form-row { display: flex; gap: 12px; }
-.flex-1 { flex: 1; }
-.form-label { font-family: var(--font-sans); font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px; color: var(--text-dark); }
+.rsvp-arch-card .inner-arch-border {
+  position: absolute;
+  inset: 12px;
+  border-radius: 308px 308px 20px 20px;
+  border: 1px solid rgba(199, 162, 75, 0.35);
+  pointer-events: none;
+}
+
+.rsvp-form {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-mocha);
+}
 
 .form-input, .form-select, .form-textarea {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  padding: 11px 14px;
-  border: 1px solid rgba(199, 162, 75, 0.4);
-  border-radius: 10px;
+  font-size: 0.82rem;
+  padding: 12px 16px;
+  border: 1px solid rgba(199, 162, 75, 0.45);
+  border-radius: 12px;
   background: rgba(253, 251, 247, 0.95);
   color: var(--text-dark);
   outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--gold-dark);
+  box-shadow: 0 0 0 3px rgba(199, 162, 75, 0.2);
+  background: #FFFDF8;
 }
 
 .submit-btn {
@@ -650,18 +691,24 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: 16px 36px;
+  border-radius: 36px;
   border: none;
   background: linear-gradient(135deg, #5C3A24 0%, #3B2517 100%);
   color: var(--gold-light);
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(59, 37, 23, 0.3);
-  margin-top: 6px;
+  box-shadow: 0 8px 24px rgba(59, 37, 23, 0.35);
+  margin-top: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(59, 37, 23, 0.45);
 }
 
 .rsvp-status { font-family: var(--font-sans); font-size: 0.75rem; text-align: center; margin-top: 8px; }
