@@ -1,16 +1,16 @@
-/* Design Tokens */
+/* Design Tokens - Mocha Theme */
 :root {
   --bg-mocha: #3B2517;
   --bg-mocha-light: #5C3A24;
-  --bg-creme: #FDFBF7;
+  --bg-creme: #FBF8F1;
   --bg-card: #FAF6EF;
   --gold-primary: #C7A24B;
   --gold-dark: #9A7B38;
   --gold-light: #D8BE84;
   --gold-pale: #F6EFDD;
   --olive-green: #556B2F;
-  --text-dark: #332A22;
-  --text-muted: #6B625B;
+  --text-dark: #3B2517;
+  --text-muted: #76695E;
   
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-cinzel: 'Cinzel Decorative', serif;
@@ -38,6 +38,23 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  background-image: 
+    radial-gradient(1200px 600px at 82% -6%, rgba(199, 162, 75, 0.08), transparent 60%),
+    radial-gradient(900px 520px at -12% 26%, rgba(169, 124, 80, 0.1), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Floating Golden Viewport Frame */
+.viewport-border {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(199, 162, 75, 0.3);
+  pointer-events: none;
+  z-index: 90;
+  border-radius: 4px;
 }
 
 /* ==========================================
@@ -155,11 +172,11 @@ body {
 }
 
 .gate-card {
-  background: rgba(43, 27, 16, 0.88);
+  background: rgba(43, 27, 16, 0.92);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(199, 162, 75, 0.5);
-  border-radius: 20px;
-  padding: 40px 24px;
+  border-radius: 24px;
+  padding: 42px 28px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.6);
   color: var(--bg-creme);
 }
@@ -279,7 +296,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(253, 251, 247, 0.88);
+  background: rgba(251, 248, 241, 0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(199, 162, 75, 0.3);
   padding: 12px 24px;
@@ -354,179 +371,193 @@ body {
 }
 
 /* ==========================================
-   4. MAIN CONTENT & CARD LAYOUT
+   4. MAIN CARD & PURE CSS MOCHA ARCH DESIGN
    ========================================== */
 .main-content {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 30px 16px;
+  padding: 40px 16px;
 }
 
-.card-frame {
+/* Pure CSS Mocha Arched Card Container */
+.mocha-arch-card {
   position: relative;
   width: 100%;
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto 60px auto;
-  border-radius: 16px;
-  box-shadow: 0 20px 45px rgba(59, 37, 23, 0.15);
+  background: var(--bg-card);
+  border-radius: 280px 280px 24px 24px; /* Arch top layout */
+  border: 1px solid rgba(199, 162, 75, 0.45);
+  box-shadow: 0 25px 60px rgba(59, 37, 23, 0.12), inset 0 0 40px rgba(251, 248, 241, 0.5);
+  padding: 70px 32px 50px 32px;
+  text-align: center;
   overflow: hidden;
-  background-color: var(--bg-card);
 }
 
-/* Image 1 Card Background Frame */
-.card-main-frame {
-  background: url('assets/card_main_bg.jpg') center top / cover no-repeat;
-  aspect-ratio: 2 / 3;
-  min-height: 920px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Image 2 Card Background Frame */
-.card-rsvp-frame {
-  background: url('assets/card_rsvp_bg.jpg') center top / cover no-repeat;
-  aspect-ratio: 2 / 3;
-  min-height: 960px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-bg-overlay {
+/* Inner Gold Double Arch Line */
+.mocha-arch-card::before {
+  content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(253, 251, 247, 0.72) 0%, rgba(253, 251, 247, 0.4) 65%, transparent 100%);
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border-radius: 266px 266px 16px 16px;
+  border: 1px solid rgba(199, 162, 75, 0.35);
   pointer-events: none;
 }
 
-.card-content {
-  position: relative;
-  z-index: 10;
-  width: 85%;
-  max-width: 480px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 40px 20px;
+.mocha-arch-card::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 260px 260px 12px 12px;
+  border: 1px solid rgba(199, 162, 75, 0.2);
+  pointer-events: none;
 }
 
-/* Hero Content Typography (Matching Image 1) */
+/* Top Botanical Floral Header Flourish */
+.arch-top-flourish {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--gold-primary);
+}
+
+.arch-top-flourish svg {
+  width: 42px;
+  height: 42px;
+  fill: var(--gold-primary);
+}
+
 .invite-header-title {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
-  letter-spacing: 3px;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin-bottom: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
 }
 
 .invite-header-subtitle {
   font-family: var(--font-sans);
   font-size: 0.65rem;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   font-weight: 500;
   color: var(--text-dark);
-  margin-bottom: 24px;
-  line-height: 1.5;
+  margin-bottom: 28px;
+  line-height: 1.6;
 }
 
 .couple-title-box {
-  margin: 20px 0;
+  margin: 24px 0;
 }
 
 .couple-names {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .couple-names .name-groom,
 .couple-names .name-bride {
   font-family: var(--font-script);
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: var(--text-dark);
   font-weight: 400;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
 .couple-names .name-and {
   font-family: var(--font-script);
-  font-size: 2.2rem;
-  color: var(--gold-dark);
-  margin: -10px 0;
+  font-size: 2.5rem;
+  color: var(--gold-primary);
+  margin: -12px 0;
 }
 
 .olive-heart-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-size: 1rem;
-  color: var(--gold-dark);
-  margin: 18px 0;
+  gap: 14px;
+  margin: 24px 0;
+  color: var(--gold-primary);
+}
+
+.olive-heart-divider .divider-line {
+  height: 1px;
+  width: 50px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
 }
 
 .wedding-day-title {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 4px;
   color: var(--gold-dark);
   margin-bottom: 4px;
 }
 
 .wedding-date-text {
-  font-family: var(--font-sans);
-  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
   font-weight: 600;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   color: var(--text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .wedding-venue-text {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
   color: var(--text-dark);
   margin-bottom: 4px;
 }
 
 .wedding-location-text {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 3px;
   color: var(--text-muted);
-  margin-bottom: 30px;
+  margin-bottom: 36px;
 }
 
 .footer-tagline {
   font-family: var(--font-sans);
-  font-size: 0.62rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   color: var(--gold-dark);
-  margin-top: 40px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(199, 162, 75, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 /* ==========================================
-   5. A WALK THROUGH TIME (STORY / PHOTOS)
+   5. A WALK THROUGH TIME (STORY & PHOTOS)
    ========================================== */
 .story-section {
   background: var(--bg-card);
-  border: 1px solid rgba(199, 162, 75, 0.3);
-  border-radius: 20px;
+  border: 1px solid rgba(199, 162, 75, 0.35);
+  border-radius: 24px;
   padding: 50px 24px;
   text-align: center;
   margin-bottom: 60px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 12px 36px rgba(59, 37, 23, 0.08);
 }
 
 .story-sub {
@@ -549,7 +580,7 @@ body {
   font-size: 1.1rem;
   font-style: italic;
   color: var(--text-muted);
-  margin: 10px 0 30px 0;
+  margin: 10px 0 32px 0;
 }
 
 .story-gallery {
@@ -562,20 +593,23 @@ body {
 
 .gallery-card {
   background: var(--bg-creme);
-  border: 1px solid rgba(199, 162, 75, 0.3);
-  border-radius: 14px;
+  border: 1px solid rgba(199, 162, 75, 0.35);
+  border-radius: 180px 180px 16px 16px; /* Arched photo frame */
+  padding: 10px 10px 18px 10px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.1);
 }
 
 .photo-wrapper {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
+  border-radius: 170px 170px 12px 12px;
   overflow: hidden;
 }
 
@@ -591,7 +625,7 @@ body {
 }
 
 .photo-caption {
-  padding: 16px;
+  padding-top: 14px;
   text-align: center;
 }
 
@@ -617,25 +651,25 @@ body {
 .countdown-section {
   background: linear-gradient(135deg, #5C3A24 0%, #3B2517 100%);
   color: var(--bg-creme);
-  border-radius: 20px;
-  padding: 50px 24px;
+  border-radius: 24px;
+  padding: 54px 24px;
   text-align: center;
   margin-bottom: 60px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.3);
   position: relative;
-  border: 1px solid rgba(216, 190, 132, 0.4);
+  border: 1px solid rgba(216, 190, 132, 0.45);
 }
 
 .countdown-sub {
   font-family: var(--font-script);
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: var(--gold-light);
   display: block;
 }
 
 .countdown-heading {
   font-family: var(--font-cinzel);
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 6px;
   font-weight: 600;
   color: var(--bg-creme);
@@ -673,8 +707,8 @@ body {
   background: rgba(255, 253, 248, 0.12);
   border: 1px solid rgba(216, 190, 132, 0.4);
   backdrop-filter: blur(4px);
-  border-radius: 12px;
-  padding: 16px 8px;
+  border-radius: 14px;
+  padding: 18px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -704,13 +738,13 @@ body {
 
 .countdown-target {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   letter-spacing: 2px;
-  color: rgba(253, 251, 247, 0.75);
+  color: rgba(253, 251, 247, 0.8);
 }
 
 /* ==========================================
-   7. RSVP & DETAILS CARD (Matching Image 2)
+   7. RSVP & DETAILS SECTION
    ========================================== */
 .rsvp-top-title {
   font-family: var(--font-sans);
@@ -722,38 +756,47 @@ body {
 
 .rsvp-script-title {
   font-family: var(--font-script);
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   color: var(--text-dark);
-  margin: 2px 0;
+  margin: 4px 0;
 }
 
 .rsvp-deadline-text {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
   color: var(--gold-dark);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(199, 162, 75, 0.12);
+  display: inline-block;
 }
 
 .schedule-box {
-  margin: 20px 0 30px 0;
-  padding: 16px 0;
+  margin: 24px 0 32px 0;
+  padding: 20px 0;
   border-top: 1px solid rgba(199, 162, 75, 0.25);
   border-bottom: 1px solid rgba(199, 162, 75, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .schedule-item {
-  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .schedule-label {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   color: var(--text-dark);
-  margin-right: 6px;
 }
 
 .schedule-time {
@@ -765,7 +808,7 @@ body {
 }
 
 .schedule-badge {
-  margin: 8px 0;
+  color: var(--gold-primary);
   font-size: 0.9rem;
 }
 
@@ -775,7 +818,10 @@ body {
   flex-direction: column;
   gap: 14px;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 14px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-group {
@@ -804,10 +850,10 @@ body {
 .form-input, .form-select, .form-textarea {
   font-family: var(--font-sans);
   font-size: 0.8rem;
-  padding: 10px 12px;
+  padding: 11px 14px;
   border: 1px solid rgba(199, 162, 75, 0.4);
-  border-radius: 8px;
-  background: rgba(253, 251, 247, 0.9);
+  border-radius: 10px;
+  background: rgba(253, 251, 247, 0.95);
   color: var(--text-dark);
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -846,8 +892,8 @@ body {
 
 /* Contact Numbers Container */
 .contact-numbers-container {
-  margin-top: 30px;
-  padding-top: 20px;
+  margin-top: 32px;
+  padding-top: 24px;
   border-top: 1px dashed rgba(199, 162, 75, 0.4);
   text-align: center;
 }
@@ -869,10 +915,10 @@ body {
 }
 
 .contact-card {
-  background: rgba(253, 251, 247, 0.85);
-  border: 1px solid rgba(199, 162, 75, 0.3);
-  border-radius: 12px;
-  padding: 14px 18px;
+  background: rgba(253, 251, 247, 0.9);
+  border: 1px solid rgba(199, 162, 75, 0.35);
+  border-radius: 14px;
+  padding: 14px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -938,9 +984,9 @@ body {
    ========================================== */
 .venue-section {
   background: var(--bg-card);
-  border: 1px solid rgba(199, 162, 75, 0.3);
-  border-radius: 16px;
-  padding: 40px 24px;
+  border: 1px solid rgba(199, 162, 75, 0.35);
+  border-radius: 24px;
+  padding: 46px 24px;
   text-align: center;
   margin-bottom: 60px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -962,7 +1008,7 @@ body {
 
 .venue-name {
   font-family: var(--font-cinzel);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--text-dark);
   margin-bottom: 6px;
 }
@@ -1034,15 +1080,14 @@ body {
     display: none;
   }
   
-  .card-main-frame, .card-rsvp-frame {
-    aspect-ratio: auto;
-    min-height: auto;
-    padding: 30px 10px;
+  .mocha-arch-card {
+    padding: 50px 18px 36px 18px;
+    border-radius: 180px 180px 20px 20px;
   }
   
   .couple-names .name-groom,
   .couple-names .name-bride {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
   
   .timer-grid {

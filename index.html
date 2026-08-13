@@ -24,6 +24,9 @@
 </head>
 <body>
 
+  <!-- Floating Golden Border Frame -->
+  <div class="viewport-border" aria-hidden="true"></div>
+
   <!-- Audio Element (Gentle Ambient Music) -->
   <audio id="bg-music" loop preload="auto">
     <audio-source></audio-source>
@@ -96,43 +99,46 @@
   <!-- Main Content Wrapper -->
   <main class="main-content">
     
-    <!-- Hero / Main Invitation Section -->
+    <!-- Hero / Main Invitation Card (Pure CSS Mocha Arch) -->
     <section id="hero" class="hero-section">
-      <div class="card-frame card-main-frame">
-        <div class="card-bg-overlay"></div>
-        <div class="card-content">
-          <p class="invite-header-title">TOGETHER WITH OUR FAMILIES</p>
-          <p class="invite-header-subtitle">WE INVITE YOU TO CELEBRATE OUR MARRIAGE CEREMONY</p>
-          
-          <div class="couple-title-box">
-            <h1 class="couple-names">
-              <span class="name-groom">Sahan</span>
-              <span class="name-and">and</span>
-              <span class="name-bride">Navoda</span>
-            </h1>
-          </div>
+      <div class="mocha-arch-card">
+        <div class="arch-top-flourish" aria-hidden="true">
+          <svg viewBox="0 0 100 40" fill="currentColor">
+            <path d="M50 0 C40 15, 20 20, 0 20 C20 20, 40 25, 50 40 C60 25, 80 20, 100 20 C80 20, 60 15, 50 0 Z" opacity="0.6"/>
+          </svg>
+        </div>
 
-          <div class="olive-heart-divider" aria-hidden="true">
-            <span class="branch-left">🌿</span>
-            <span class="heart-center">♥</span>
-            <span class="branch-right">🌿</span>
-          </div>
+        <p class="invite-header-title">TOGETHER WITH OUR FAMILIES</p>
+        <p class="invite-header-subtitle">WE INVITE YOU TO CELEBRATE OUR MARRIAGE CEREMONY</p>
+        
+        <div class="couple-title-box">
+          <h1 class="couple-names">
+            <span class="name-groom">Sahan</span>
+            <span class="name-and">and</span>
+            <span class="name-bride">Navoda</span>
+          </h1>
+        </div>
 
-          <p class="wedding-day-title">THURSDAY</p>
-          <p class="wedding-date-text">24TH OF SEPTEMBER 2026</p>
-          <p class="wedding-venue-text">NOOIT GEDACHT HERITAGE HOTEL</p>
-          <p class="wedding-location-text">GALLE, SRI LANKA</p>
+        <div class="olive-heart-divider" aria-hidden="true">
+          <span class="divider-line"></span>
+          <span>🌿 ♥ 🌿</span>
+          <span class="divider-line"></span>
+        </div>
 
-          <div class="footer-tagline">
-            <span>DRESS IN YOUR BEST</span>
-            <span class="tagline-dot">•</span>
-            <span>CELEBRATE WITH US</span>
-          </div>
+        <p class="wedding-day-title">THURSDAY</p>
+        <p class="wedding-date-text">24TH OF SEPTEMBER 2026</p>
+        <p class="wedding-venue-text">NOOIT GEDACHT HERITAGE HOTEL</p>
+        <p class="wedding-location-text">GALLE, SRI LANKA</p>
+
+        <div class="footer-tagline">
+          <span>DRESS IN YOUR BEST</span>
+          <span>•</span>
+          <span>CELEBRATE WITH US</span>
         </div>
       </div>
     </section>
 
-    <!-- "A Walk Through Time" Section -->
+    <!-- "A Walk Through Time" Story Section -->
     <section id="story" class="story-section scroll-reveal">
       <div class="story-container">
         <span class="story-sub">A Walk Through Time</span>
@@ -202,98 +208,93 @@
       </div>
     </section>
 
-    <!-- RSVP & Details Section -->
+    <!-- RSVP & Details Section (Pure CSS Mocha Arch Card) -->
     <section id="rsvp" class="rsvp-section scroll-reveal">
-      <div class="card-frame card-rsvp-frame">
-        <div class="card-bg-overlay"></div>
-        <div class="card-content">
-          <h2 class="rsvp-top-title">WE CAN'T WAIT TO</h2>
-          <p class="rsvp-script-title">celebrate this special day</p>
-          <p class="rsvp-top-title">WITH YOU!</p>
+      <div class="mocha-arch-card">
+        <h2 class="rsvp-top-title">WE CAN'T WAIT TO</h2>
+        <p class="rsvp-script-title">celebrate this special day</p>
+        <p class="rsvp-top-title">WITH YOU!</p>
 
-          <div class="olive-heart-divider" aria-hidden="true">
-            <span class="branch-left">🌿</span>
-            <span class="heart-center">♥</span>
-            <span class="branch-right">🌿</span>
+        <div class="olive-heart-divider" aria-hidden="true">
+          <span class="divider-line"></span>
+          <span>🌿 ♥ 🌿</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <div class="rsvp-deadline-text">KINDLY RSVP BY 5TH SEPTEMBER 2026 (2026.09.05)</div>
+
+        <!-- Schedule & RSVP Form -->
+        <div class="rsvp-body-content">
+          <div class="schedule-box">
+            <div class="schedule-item">
+              <span class="schedule-label">SIGNING CEREMONY:</span>
+              <span class="schedule-time">10:00 AM</span>
+            </div>
+            <div class="schedule-badge">✦</div>
+            <div class="schedule-item">
+              <span class="schedule-label">LUNCH:</span>
+              <span class="schedule-time">12:30 PM</span>
+            </div>
           </div>
 
-          <p class="rsvp-deadline-text">KINDLY RSVP BY 5TH SEPTEMBER 2026 (2026.09.05)</p>
+          <!-- RSVP Form -->
+          <form id="rsvp-form" class="rsvp-form">
+            <div class="form-group">
+              <label for="guest-name" class="form-label">YOUR FULL NAME</label>
+              <input type="text" id="guest-name" name="name" class="form-input" placeholder="e.g. Mr. & Mrs. Perera" required>
+            </div>
 
-          <!-- Schedule -->
-          <div class="rsvp-body-content">
-            <div class="schedule-box">
-              <div class="schedule-item">
-                <span class="schedule-label">SIGNING CEREMONY:</span>
-                <span class="schedule-time">10:00 AM</span>
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label for="guest-count" class="form-label">NUMBER OF GUESTS</label>
+                <select id="guest-count" name="guest_count" class="form-select">
+                  <option value="1 Guest">1 Guest</option>
+                  <option value="2 Guests" selected>2 Guests</option>
+                  <option value="3 Guests">3 Guests</option>
+                  <option value="4+ Guests">4+ Guests</option>
+                </select>
               </div>
-              <div class="schedule-badge">
-                <span class="olive-circle">🌿</span>
-              </div>
-              <div class="schedule-item">
-                <span class="schedule-label">LUNCH:</span>
-                <span class="schedule-time">12:30 PM</span>
+              <div class="form-group flex-1">
+                <label for="attendance" class="form-label">ATTENDANCE</label>
+                <select id="attendance" name="attendance" class="form-select">
+                  <option value="Joyfully Accepts">Joyfully Accepts</option>
+                  <option value="Regretfully Declines">Regretfully Declines</option>
+                </select>
               </div>
             </div>
 
-            <!-- RSVP Form -->
-            <form id="rsvp-form" class="rsvp-form">
-              <div class="form-group">
-                <label for="guest-name" class="form-label">YOUR FULL NAME</label>
-                <input type="text" id="guest-name" name="name" class="form-input" placeholder="e.g. Mr. & Mrs. Perera" required>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group flex-1">
-                  <label for="guest-count" class="form-label">NUMBER OF GUESTS</label>
-                  <select id="guest-count" name="guest_count" class="form-select">
-                    <option value="1 Guest">1 Guest</option>
-                    <option value="2 Guests" selected>2 Guests</option>
-                    <option value="3 Guests">3 Guests</option>
-                    <option value="4+ Guests">4+ Guests</option>
-                  </select>
-                </div>
-                <div class="form-group flex-1">
-                  <label for="attendance" class="form-label">ATTENDANCE</label>
-                  <select id="attendance" name="attendance" class="form-select">
-                    <option value="Joyfully Accepts">Joyfully Accepts</option>
-                    <option value="Regretfully Declines">Regretfully Declines</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="guest-message" class="form-label">SPECIAL WISHES / MESSAGE (OPTIONAL)</label>
-                <textarea id="guest-message" name="message" class="form-textarea" rows="2" placeholder="Send a note to Sahan & Navoda..."></textarea>
-              </div>
-
-              <button type="submit" class="submit-btn" id="submit-btn">
-                <span class="btn-shine"></span>
-                <span class="btn-txt">SUBMIT RSVP</span>
-              </button>
-
-              <div id="rsvp-status" class="rsvp-status"></div>
-            </form>
-
-            <!-- Direct Contact Numbers -->
-            <div class="contact-numbers-container">
-              <p class="contact-title">CONTACT FOR INQUIRIES & DIRECT RSVP</p>
-              <div class="contact-cards">
-                <div class="contact-card">
-                  <span class="contact-role">Bride (Navoda)</span>
-                  <a href="tel:0719853878" class="contact-link">📞 071 985 3878</a>
-                  <a href="https://wa.me/94719853878?text=Hi%20Navoda,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
-                </div>
-                <div class="contact-card">
-                  <span class="contact-role">Groom (Sahan)</span>
-                  <a href="tel:0710121966" class="contact-link">📞 071 012 1966</a>
-                  <a href="https://wa.me/94710121966?text=Hi%20Sahan,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
-                </div>
-              </div>
+            <div class="form-group">
+              <label for="guest-message" class="form-label">SPECIAL WISHES / MESSAGE (OPTIONAL)</label>
+              <textarea id="guest-message" name="message" class="form-textarea" rows="2" placeholder="Send a note to Sahan & Navoda..."></textarea>
             </div>
 
-            <p class="rsvp-footer-script">thank you for being a part of our beginning</p>
-            <div class="heart-line-flourish">♡</div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+              <span class="btn-shine"></span>
+              <span class="btn-txt">SUBMIT RSVP</span>
+            </button>
+
+            <div id="rsvp-status" class="rsvp-status"></div>
+          </form>
+
+          <!-- Direct Contact Numbers -->
+          <div class="contact-numbers-container">
+            <p class="contact-title">CONTACT FOR INQUIRIES & DIRECT RSVP</p>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <span class="contact-role">Bride (Navoda)</span>
+                <a href="tel:0719853878" class="contact-link">📞 071 985 3878</a>
+                <a href="https://wa.me/94719853878?text=Hi%20Navoda,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
+              </div>
+              <div class="contact-card">
+                <span class="contact-role">Groom (Sahan)</span>
+                <a href="tel:0710121966" class="contact-link">📞 071 012 1966</a>
+                <a href="https://wa.me/94710121966?text=Hi%20Sahan,%20I%20would%20love%20to%20RSVP%20for%20your%20wedding!" target="_blank" rel="noopener" class="contact-wa">💬 WhatsApp</a>
+              </div>
+            </div>
           </div>
+
+          <p class="rsvp-footer-script">thank you for being a part of our beginning</p>
+          <div class="heart-line-flourish">♡</div>
         </div>
       </div>
     </section>
