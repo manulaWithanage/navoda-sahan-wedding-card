@@ -378,7 +378,14 @@ body {
 /* ==========================================
    2. FALLING PETALS CANVAS & STICKY NAVBAR
    ========================================== */
-.petals-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 15; }
+.petals-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 90;
+}
 
 .navbar {
   position: sticky;

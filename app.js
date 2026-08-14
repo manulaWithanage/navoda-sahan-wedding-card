@@ -126,13 +126,17 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
 
   // ==========================================
-  // 3. FALLING PETALS CANVAS (Gentle Luxury Drift)
+  // 3. FALLING PETALS CANVAS (Lush Romantic Drift)
   // ==========================================
+  let petalsRunning = false;
+
   function initPetals() {
+    if (petalsRunning) return;
     const canvas = document.getElementById("petals-canvas");
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     
+    petalsRunning = true;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
@@ -141,30 +145,32 @@ document.addEventListener("DOMContentLoaded", () => {
       height = canvas.height = window.innerHeight;
     });
 
-    const petalCount = window.innerWidth < 768 ? 14 : 26;
+    const isMobile = window.innerWidth < 768;
+    const petalCount = isMobile ? 22 : 36;
     const petals = [];
 
-    // Soft Romantic Palette: Ivory, Champagne, and Blush Rose
+    // Warm, Rich Rose & Gold Wedding Palette (Clearly Visible on Both Light & Dark)
     const petalColors = [
-      "rgba(255, 253, 248, 0.70)", // Luminous ivory
-      "rgba(229, 207, 152, 0.65)", // Champagne gold
-      "rgba(244, 226, 222, 0.55)", // Soft blush rose
-      "rgba(216, 190, 132, 0.50)"  // Warm gold
+      "#E2AA93", // Warm rose petal
+      "#D99B84", // Deep blush petal
+      "#E5C888", // Rich champagne gold
+      "#C7A24B", // Metallic gold
+      "#EBB3A6"  // Soft pink rose
     ];
 
     for (let i = 0; i < petalCount; i++) {
       petals.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 6 + 5,
-        speedY: Math.random() * 0.35 + 0.30, // Ultra-gentle, slow romantic descent
-        speedX: Math.random() * 0.2 - 0.1,
-        swaySpeed: Math.random() * 0.012 + 0.006,
+        size: Math.random() * 6 + 9, // 9px to 15px (clearly visible rose petal)
+        speedY: Math.random() * 0.9 + 0.9, // Balanced graceful descent (~1.3 px/frame)
+        speedX: Math.random() * 0.6 - 0.3,
+        swaySpeed: Math.random() * 0.02 + 0.01,
         swayAngle: Math.random() * Math.PI * 2,
-        swayRange: Math.random() * 1.2 + 0.6,
+        swayRange: Math.random() * 1.8 + 0.8,
         tilt: Math.random() * Math.PI,
-        tiltSpeed: Math.random() * 0.012 + 0.006,
-        opacity: Math.random() * 0.35 + 0.3,
+        tiltSpeed: Math.random() * 0.02 + 0.01,
+        opacity: Math.random() * 0.35 + 0.55, // 0.55 to 0.90 for rich clarity
         color: petalColors[Math.floor(Math.random() * petalColors.length)]
       });
     }
@@ -179,24 +185,27 @@ document.addEventListener("DOMContentLoaded", () => {
         p.tilt += p.tiltSpeed;
 
         // Reset past bottom
-        if (p.y > height + 20) {
-          p.y = -20;
+        if (p.y > height + 25) {
+          p.y = -25;
           p.x = Math.random() * width;
         }
         // Wrap horizontally
-        if (p.x > width + 20) p.x = -20;
-        if (p.x < -20) p.x = width + 20;
+        if (p.x > width + 25) p.x = -25;
+        if (p.x < -25) p.x = width + 25;
 
         ctx.save();
         ctx.translate(p.x, p.y);
-        ctx.rotate(p.swayAngle * 0.5);
-        ctx.scale(1, Math.cos(p.tilt) * 0.85); // Organic 3D tumbling illusion
+        ctx.rotate(p.swayAngle * 0.6);
+        
+        // 3D perspective flip (bounded so it never collapses to 0)
+        const scaleY = Math.max(0.3, Math.abs(Math.cos(p.tilt)));
+        ctx.scale(1, scaleY);
         ctx.globalAlpha = p.opacity;
         ctx.fillStyle = p.color;
 
-        // Organic petal shape
+        // Organic curved rose petal shape
         ctx.beginPath();
-        ctx.ellipse(0, 0, p.size, p.size * 0.55, Math.PI / 4, 0, Math.PI * 2);
+        ctx.ellipse(0, 0, p.size, p.size * 0.62, Math.PI / 4, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.restore();
@@ -207,6 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     render();
   }
+
+  // Initialize petals immediately
+  initPetals();
 
   // ==========================================
   // 4. RSVP FORM SUBMISSION HANDLER
