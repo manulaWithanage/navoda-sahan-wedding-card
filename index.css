@@ -1212,22 +1212,62 @@ body {
   margin-bottom: 24px;
 }
 
-.bottom-contacts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.contact-pill-btn {
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--gold-light);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(216, 190, 132, 0.4);
-  padding: 10px 18px;
-  border-radius: 24px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+.bottom-contacts {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.contact-pill-btn:hover { background: rgba(255, 255, 255, 0.2); }
+.contact-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #FFFDF8;
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.14) 0%, rgba(255, 253, 248, 0.05) 100%);
+  border: 1.5px solid rgba(216, 190, 132, 0.55);
+  backdrop-filter: blur(8px);
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(20, 8, 16, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-pill-btn:hover {
+  background: linear-gradient(135deg, rgba(216, 190, 132, 0.25) 0%, rgba(216, 190, 132, 0.12) 100%);
+  border-color: rgba(216, 190, 132, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(20, 8, 16, 0.45), 0 0 18px rgba(216, 190, 132, 0.3);
+  color: #FFFDF8;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  stroke: var(--gold-light);
+  transition: transform 0.3s ease;
+}
+
+.contact-pill-btn:hover .contact-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.contact-role {
+  color: var(--gold-light);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contact-number {
+  color: #FFFDF8;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
 
 
 
@@ -1661,11 +1701,12 @@ body {
   }
   .contact-pill-btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     margin: 0 auto;
-    text-align: center;
-    font-size: 0.68rem;
-    padding: 11px 14px;
+    justify-content: center;
+    font-size: 0.7rem;
+    padding: 12px 18px;
+    border-radius: 30px;
   }
 
   /* Mobile Floating Music Player */
