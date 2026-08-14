@@ -39,14 +39,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const musicContainer = document.querySelector(".floating-music-container");
+
+  function showMusicWidget() {
+    if (musicContainer) {
+      musicContainer.classList.add("is-visible");
+    }
+  }
+
   function startAudio() {
     if (!bgMusic || isPlayingMusic) return;
     bgMusic.play().then(() => {
       isPlayingMusic = true;
       updateMusicUI(true);
+      showMusicWidget();
     }).catch(err => {
       console.log("Audio autoplay waiting for user interaction:", err);
-      updateMusicUI(false);
     });
   }
 
@@ -93,12 +101,17 @@ document.addEventListener("DOMContentLoaded", () => {
       gate.classList.add("gate-open");
       
       // 2. Play background music
-      startAudio();
+      if (bgMusic) {
+        bgMusic.play().then(() => {
+          isPlayingMusic = true;
+          updateMusicUI(true);
+        }).catch(err => {
+          console.log("Play error:", err);
+        });
+      }
+      showMusicWidget();
 
-      // 3. Initialize Petal Canvas
-      initPetals();
-
-      // 4. Remove gate after animation finishes
+      // 3. Remove gate after animation finishes
       setTimeout(() => {
         gate.style.display = "none";
       }, 1200);
