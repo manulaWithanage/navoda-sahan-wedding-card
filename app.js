@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const isMobile = window.innerWidth < 768;
-    const petalCount = isMobile ? 12 : 20;
+    const petalCount = isMobile ? 10 : 16;
     const petals = [];
 
     // Warm, Rich Rose & Gold Wedding Palette
@@ -163,15 +163,15 @@ document.addEventListener("DOMContentLoaded", () => {
         x: Math.random() * width,
         y: Math.random() * height - height,
         size: Math.random() * 4 + 7, // 7px to 11px
-        speedY: Math.random() * 1.4 + 1.8, // Clear downward gravitational fall (1.8 - 3.2 px/frame)
-        speedX: Math.random() * 0.4 - 0.2, // Subtle breeze drift
-        swaySpeed: Math.random() * 0.025 + 0.015,
+        speedY: Math.random() * 0.4 + 1.0, // Standard graceful falling speed (1.0 - 1.4 px/frame)
+        speedX: Math.random() * 0.3 - 0.15, // Light air drift
+        swaySpeed: Math.random() * 0.015 + 0.01,
         swayAngle: Math.random() * Math.PI * 2,
-        swayRange: Math.random() * 0.8 + 0.4, // Subtle aerodynamic flutter (downward motion dominates)
+        swayRange: Math.random() * 0.6 + 0.3, // Gentle flutter
         rotation: Math.random() * Math.PI * 2,
-        rotationSpeed: Math.random() * 0.02 - 0.01,
+        rotationSpeed: Math.random() * 0.01 - 0.005,
         tilt: Math.random() * Math.PI,
-        tiltSpeed: Math.random() * 0.02 + 0.01,
+        tiltSpeed: Math.random() * 0.015 + 0.005,
         opacity: Math.random() * 0.25 + 0.50, // 0.50 to 0.75
         color: petalColors[Math.floor(Math.random() * petalColors.length)]
       });
