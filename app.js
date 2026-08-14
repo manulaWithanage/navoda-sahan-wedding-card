@@ -28,13 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isPlayingMusic) {
       bgMusic.pause();
       isPlayingMusic = false;
+      if (musicToggle) musicToggle.classList.remove("is-playing");
       if (musicIcon) musicIcon.textContent = "🔇";
       if (musicLabel) musicLabel.textContent = "MUTED";
     } else {
       bgMusic.play().then(() => {
         isPlayingMusic = true;
+        if (musicToggle) musicToggle.classList.add("is-playing");
         if (musicIcon) musicIcon.textContent = "🎵";
-        if (musicLabel) musicLabel.textContent = "PLAYING";
+        if (musicLabel) musicLabel.textContent = "MUSIC";
       }).catch(err => {
         console.log("Audio playback prevented or failed:", err);
       });
@@ -50,8 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (bgMusic) {
         bgMusic.play().then(() => {
           isPlayingMusic = true;
+          if (musicToggle) musicToggle.classList.add("is-playing");
           if (musicIcon) musicIcon.textContent = "🎵";
-          if (musicLabel) musicLabel.textContent = "PLAYING";
+          if (musicLabel) musicLabel.textContent = "MUSIC";
         }).catch(err => {
           console.log("Autoplay blocked:", err);
         });
