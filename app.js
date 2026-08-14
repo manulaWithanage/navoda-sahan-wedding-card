@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
 
   // ==========================================
-  // 3. FALLING PETALS CANVAS (Lush Romantic Drift)
+  // 3. FALLING PETALS CANVAS (True Downward Gravitational Fall)
   // ==========================================
   let petalsRunning = false;
 
@@ -146,10 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const isMobile = window.innerWidth < 768;
-    const petalCount = isMobile ? 10 : 18;
+    const petalCount = isMobile ? 12 : 20;
     const petals = [];
 
-    // Warm, Rich Rose & Gold Wedding Palette (Subtle & Elegant)
+    // Warm, Rich Rose & Gold Wedding Palette
     const petalColors = [
       "#E2AA93", // Warm rose petal
       "#D99B84", // Deep blush petal
@@ -161,16 +161,18 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < petalCount; i++) {
       petals.push({
         x: Math.random() * width,
-        y: Math.random() * height,
-        size: Math.random() * 5 + 7, // 7px to 12px (subtle & graceful)
-        speedY: Math.random() * 0.5 + 0.6, // Gentle smooth float (~0.85 px/frame)
-        speedX: Math.random() * 0.4 - 0.2,
-        swaySpeed: Math.random() * 0.015 + 0.008,
+        y: Math.random() * height - height,
+        size: Math.random() * 4 + 7, // 7px to 11px
+        speedY: Math.random() * 1.4 + 1.8, // Clear downward gravitational fall (1.8 - 3.2 px/frame)
+        speedX: Math.random() * 0.4 - 0.2, // Subtle breeze drift
+        swaySpeed: Math.random() * 0.025 + 0.015,
         swayAngle: Math.random() * Math.PI * 2,
-        swayRange: Math.random() * 1.5 + 0.6,
+        swayRange: Math.random() * 0.8 + 0.4, // Subtle aerodynamic flutter (downward motion dominates)
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: Math.random() * 0.02 - 0.01,
         tilt: Math.random() * Math.PI,
-        tiltSpeed: Math.random() * 0.015 + 0.008,
-        opacity: Math.random() * 0.25 + 0.45, // Soft translucent 0.45 to 0.70
+        tiltSpeed: Math.random() * 0.02 + 0.01,
+        opacity: Math.random() * 0.25 + 0.50, // 0.50 to 0.75
         color: petalColors[Math.floor(Math.random() * petalColors.length)]
       });
     }
@@ -182,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         p.y += p.speedY;
         p.swayAngle += p.swaySpeed;
         p.x += Math.sin(p.swayAngle) * p.swayRange + p.speedX;
+        p.rotation += p.rotationSpeed;
         p.tilt += p.tiltSpeed;
 
         // Reset past bottom
@@ -195,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ctx.save();
         ctx.translate(p.x, p.y);
-        ctx.rotate(p.swayAngle * 0.6);
+        ctx.rotate(p.rotation);
         
         // 3D perspective flip (bounded so it never collapses to 0)
         const scaleY = Math.max(0.3, Math.abs(Math.cos(p.tilt)));
@@ -205,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Organic curved rose petal shape
         ctx.beginPath();
-        ctx.ellipse(0, 0, p.size, p.size * 0.62, Math.PI / 4, 0, Math.PI * 2);
+        ctx.ellipse(0, 0, p.size, p.size * 0.60, Math.PI / 4, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.restore();
