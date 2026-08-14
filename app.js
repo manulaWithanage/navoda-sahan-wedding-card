@@ -18,27 +18,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const waxBtn = document.getElementById("wax-seal-btn");
   const bgMusic = document.getElementById("bg-music");
   const musicToggle = document.getElementById("music-toggle");
-  const musicIcon = document.getElementById("music-icon");
   const musicLabel = document.getElementById("music-label");
 
   let isPlayingMusic = false;
 
-  function toggleMusic() {
+  function updateMusicUI(playing) {
+    if (!musicToggle) return;
+    if (playing) {
+      musicToggle.classList.add("is-playing");
+      musicToggle.classList.remove("is-muted");
+      if (musicLabel) musicLabel.textContent = "PLAYING";
+      musicToggle.setAttribute("aria-label", "Mute background music");
+      musicToggle.setAttribute("title", "Mute background music");
+    } else {
+      musicToggle.classList.remove("is-playing");
+      musicToggle.classList.add("is-muted");
+      if (musicLabel) musicLabel.textContent = "MUTED";
+      musicToggle.setAttribute("aria-label", "Play background music");
+      musicToggle.setAttribute("title", "Play background music");
+    }
+  }
+
+  function toggleMusic(e) {
+    if (e) {
+      e.stopPropagation();
+    }
     if (!bgMusic) return;
+    
     if (isPlayingMusic) {
       bgMusic.pause();
       isPlayingMusic = false;
-      if (musicToggle) musicToggle.classList.remove("is-playing");
-      if (musicIcon) musicIcon.textContent = "🔇";
-      if (musicLabel) musicLabel.textContent = "MUTED";
+      updateMusicUI(false);
     } else {
       bgMusic.play().then(() => {
         isPlayingMusic = true;
-        if (musicToggle) musicToggle.classList.add("is-playing");
-        if (musicIcon) musicIcon.textContent = "🎵";
-        if (musicLabel) musicLabel.textContent = "MUSIC";
+        updateMusicUI(true);
       }).catch(err => {
-        console.log("Audio playback prevented or failed:", err);
+        console.log("Audio playback error:", err);
       });
     }
   }
@@ -52,11 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (bgMusic) {
         bgMusic.play().then(() => {
           isPlayingMusic = true;
-          if (musicToggle) musicToggle.classList.add("is-playing");
-          if (musicIcon) musicIcon.textContent = "🎵";
-          if (musicLabel) musicLabel.textContent = "MUSIC";
+          updateMusicUI(true);
         }).catch(err => {
           console.log("Autoplay blocked:", err);
+          updateMusicUI(false);
         });
       }
 

@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Mea+Culpa&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <!-- Stylesheet (cache-busting version) -->
-  <link rel="stylesheet" href="index.css?v=7.0">
+  <link rel="stylesheet" href="index.css?v=7.5">
 </head>
 <body>
 
@@ -107,10 +107,14 @@
   </header>
 
   <!-- Floating Bottom-Right Corner Music Widget -->
-  <aside class="floating-music-container" aria-label="Audio player">
-    <button class="floating-music-btn is-playing" id="music-toggle" aria-label="Toggle background music" title="Toggle background music">
-      <div class="music-disc">
-        <span class="music-icon" id="music-icon">🎵</span>
+  <aside class="floating-music-container" aria-label="Audio controls">
+    <button type="button" class="floating-music-btn" id="music-toggle" aria-label="Play background music" title="Toggle background music">
+      <div class="music-disc" aria-hidden="true">
+        <svg class="music-icon icon-muted" id="music-icon-muted" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D8BE84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
         <div class="sound-bars" id="sound-bars">
           <span class="bar bar-1"></span>
           <span class="bar bar-2"></span>
