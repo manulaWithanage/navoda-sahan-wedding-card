@@ -202,9 +202,9 @@ body {
 .gate-content {
   position: relative;
   z-index: 30;
-  padding: 20px;
+  padding: 16px;
   width: 100%;
-  max-width: 520px;
+  max-width: 390px;
   text-align: center;
   transition: transform 0.6s ease, opacity 0.6s ease;
 }
@@ -217,94 +217,94 @@ body {
 .gate-card {
   position: relative;
   background: linear-gradient(145deg, rgba(53, 33, 20, 0.96) 0%, rgba(36, 21, 12, 0.98) 100%), url('assets/line_art.jpg') center/cover no-repeat;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
   border: 1.5px solid rgba(216, 190, 132, 0.6);
-  border-radius: 36px;
-  padding: 54px 44px 44px 44px;
-  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  border-radius: 26px;
+  padding: 38px 26px 30px 26px;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
   color: var(--bg-creme);
-  max-width: 500px;
+  max-width: 390px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .gate-inner-border {
   position: absolute;
-  inset: 12px;
-  border-radius: 26px;
-  border: 1px solid rgba(216, 190, 132, 0.38);
+  inset: 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(216, 190, 132, 0.35);
   pointer-events: none;
 }
 
 .gate-corner-ornament {
   position: absolute;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--gold-light);
-  opacity: 0.75;
+  opacity: 0.7;
   pointer-events: none;
   line-height: 1;
 }
 
-.gate-tl { top: 16px; left: 16px; }
-.gate-tr { top: 16px; right: 16px; }
-.gate-bl { bottom: 16px; left: 16px; }
-.gate-br { bottom: 16px; right: 16px; }
+.gate-tl { top: 12px; left: 12px; }
+.gate-tr { top: 12px; right: 12px; }
+.gate-bl { bottom: 12px; left: 12px; }
+.gate-br { bottom: 12px; right: 12px; }
 
 .gate-heart-icon {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   display: flex;
   justify-content: center;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 .gate-tagline {
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 4px;
+  letter-spacing: 3.5px;
   color: #D8BE84;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   text-transform: uppercase;
 }
 
 .gate-couple-names {
   font-family: var(--font-cinzel);
   color: var(--bg-creme);
-  margin: 0 0 18px 0;
+  margin: 0 0 12px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 3px;
 }
 
 .gate-couple-names .name-line {
-  font-size: 2.35rem;
+  font-size: 2.05rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   line-height: 1.15;
   color: #FFFDF8;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .gate-couple-names .name-and {
   font-family: var(--font-script);
   color: #E5CF98;
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   font-style: normal;
   text-transform: lowercase;
-  margin: 2px 0;
+  margin: 1px 0;
   line-height: 1.1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .gate-subtext {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: rgba(253, 251, 247, 0.9);
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   letter-spacing: 0.5px;
 }
 
@@ -314,17 +314,17 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 38px;
+  padding: 13px 32px;
   border-radius: 50px;
   border: none;
   background: linear-gradient(135deg, #F5E6C4 0%, #D8BE84 45%, #B8964E 100%);
   color: #352114;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 24px rgba(216, 190, 132, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(216, 190, 132, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
   overflow: hidden;
 }
