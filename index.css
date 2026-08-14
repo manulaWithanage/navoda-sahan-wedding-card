@@ -888,45 +888,7 @@ body {
 
 .contact-pill-btn:hover { background: rgba(255, 255, 255, 0.2); }
 
-/* Footer */
-.site-footer {
-  text-align: center;
-  padding: 42px 20px;
-  background: linear-gradient(135deg, #5C3A24 0%, #3B2517 100%);
-  border-top: 1px solid rgba(216, 190, 132, 0.45);
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
-  color: #F6EFDD;
-  position: relative;
-  z-index: 10;
-}
 
-.footer-names {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-size: 2.2rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: #FFFDF8;
-  margin-bottom: 6px;
-}
-
-.footer-names .footer-amp {
-  font-family: var(--font-serif);
-  font-style: normal;
-  color: var(--gold-light);
-  font-weight: 300;
-  margin: 0 4px;
-}
-
-.footer-copy {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 2.5px;
-  color: rgba(246, 239, 221, 0.85);
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-top: 6px;
-}
 
 /* ==========================================
    11. RESPONSIVE BREAKPOINTS
