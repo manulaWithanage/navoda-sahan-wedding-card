@@ -146,10 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const isMobile = window.innerWidth < 768;
-    const petalCount = isMobile ? 22 : 36;
+    const petalCount = isMobile ? 10 : 18;
     const petals = [];
 
-    // Warm, Rich Rose & Gold Wedding Palette (Clearly Visible on Both Light & Dark)
+    // Warm, Rich Rose & Gold Wedding Palette (Subtle & Elegant)
     const petalColors = [
       "#E2AA93", // Warm rose petal
       "#D99B84", // Deep blush petal
@@ -162,15 +162,15 @@ document.addEventListener("DOMContentLoaded", () => {
       petals.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 6 + 9, // 9px to 15px (clearly visible rose petal)
-        speedY: Math.random() * 0.9 + 0.9, // Balanced graceful descent (~1.3 px/frame)
-        speedX: Math.random() * 0.6 - 0.3,
-        swaySpeed: Math.random() * 0.02 + 0.01,
+        size: Math.random() * 5 + 7, // 7px to 12px (subtle & graceful)
+        speedY: Math.random() * 0.5 + 0.6, // Gentle smooth float (~0.85 px/frame)
+        speedX: Math.random() * 0.4 - 0.2,
+        swaySpeed: Math.random() * 0.015 + 0.008,
         swayAngle: Math.random() * Math.PI * 2,
-        swayRange: Math.random() * 1.8 + 0.8,
+        swayRange: Math.random() * 1.5 + 0.6,
         tilt: Math.random() * Math.PI,
-        tiltSpeed: Math.random() * 0.02 + 0.01,
-        opacity: Math.random() * 0.35 + 0.55, // 0.55 to 0.90 for rich clarity
+        tiltSpeed: Math.random() * 0.015 + 0.008,
+        opacity: Math.random() * 0.25 + 0.45, // Soft translucent 0.45 to 0.70
         color: petalColors[Math.floor(Math.random() * petalColors.length)]
       });
     }
