@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const musicToggle = document.getElementById("music-toggle");
   const musicLabel = document.getElementById("music-label");
 
-  let isPlayingMusic = true; // Default PLAYING
-
   function updateMusicUI(playing) {
     if (!musicToggle) return;
     if (playing) {
@@ -39,15 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function startAudio() {
+  if (bgMusic) {
+    bgMusic.volume = 1.0;
+    bgMusic.addEventListener("play", () => updateMusicUI(true));
+    bgMusic.addEventListener("pause", () => updateMusicUI(false));
+    bgMusic.addEventListener("ended", () => updateMusicUI(false));
+  }
+
+  function playAudio() {
     if (!bgMusic) return;
     bgMusic.play().then(() => {
-      isPlayingMusic = true;
       updateMusicUI(true);
     }).catch(err => {
-      console.log("Audio waiting for first interaction:", err);
-      // Keep UI in PLAYING state
-      updateMusicUI(true);
+      console.log("Autoplay waiting for first touch:", err);
+      updateMusicUI(false);
     });
   }
 
@@ -57,50 +60,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (!bgMusic) return;
     
-    if (isPlayingMusic) {
-      bgMusic.pause();
-      isPlayingMusic = false;
-      updateMusicUI(false);
+    if (bgMusic.paused) {
+      bgMusic.play().catch(err => console.log("Play error:", err));
     } else {
-      bgMusic.play().then(() => {
-        isPlayingMusic = true;
-        updateMusicUI(true);
-      }).catch(err => {
-        console.log("Audio playback error:", err);
-      });
+      bgMusic.pause();
     }
   }
 
-  // Attempt autoplay immediately on page load
-  startAudio();
+  if (musicToggle) {
+    musicToggle.addEventListener("click", toggleMusic);
+  }
 
-  // Also bind to very first interaction anywhere on the screen so audio starts immediately
-  const enableAudioOnFirstGesture = () => {
-    if (bgMusic && isPlayingMusic) {
+  // Attempt autoplay immediately
+  playAudio();
+
+  // On any first click or tap anywhere, immediately start audio
+  const startAudioOnFirstTouch = () => {
+    if (bgMusic && bgMusic.paused) {
       bgMusic.play().catch(() => {});
     }
-    window.removeEventListener("click", enableAudioOnFirstGesture);
-    window.removeEventListener("touchstart", enableAudioOnFirstGesture);
-    window.removeEventListener("scroll", enableAudioOnFirstGesture);
   };
 
-  window.addEventListener("click", enableAudioOnFirstGesture, { once: true, passive: true });
-  window.addEventListener("touchstart", enableAudioOnFirstGesture, { once: true, passive: true });
-  window.addEventListener("scroll", enableAudioOnFirstGesture, { once: true, passive: true });
+  window.addEventListener("click", startAudioOnFirstTouch, { once: true, passive: true });
+  window.addEventListener("touchstart", startAudioOnFirstTouch, { once: true, passive: true });
 
   if (waxBtn && gate) {
     waxBtn.addEventListener("click", () => {
       // 1. Trigger door slide
       gate.classList.add("gate-open");
       
-      // 2. Play background music
+      // 2. Guaranteed audio play on tap
       if (bgMusic) {
-        bgMusic.play().then(() => {
-          isPlayingMusic = true;
-          updateMusicUI(true);
-        }).catch(err => {
-          console.log("Play error:", err);
-        });
+        bgMusic.play().catch(err => console.log("Play error:", err));
       }
 
       // 3. Remove gate after animation finishes
