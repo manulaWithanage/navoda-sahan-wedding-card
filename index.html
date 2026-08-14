@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Mea+Culpa&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <!-- Stylesheet (cache-busting version) -->
-  <link rel="stylesheet" href="index.css?v=13.0">
+  <link rel="stylesheet" href="index.css?v=14.0">
 </head>
 <body>
 
@@ -109,7 +109,7 @@
 
   <!-- Floating Bottom-Right Corner Music Widget -->
   <aside class="floating-music-container" aria-label="Audio controls">
-    <button type="button" class="floating-music-btn" id="music-toggle" aria-label="Play background music" title="Toggle background music">
+    <button type="button" class="floating-music-btn is-playing" id="music-toggle" aria-label="Mute background music" title="Toggle background music">
       <div class="music-disc" aria-hidden="true">
         <svg class="music-icon icon-muted" id="music-icon-muted" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D8BE84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -122,7 +122,7 @@
           <span class="bar bar-3"></span>
         </div>
       </div>
-      <span class="music-label" id="music-label">MUSIC</span>
+      <span class="music-label" id="music-label">PLAYING</span>
     </button>
   </aside>
 
@@ -451,6 +451,6 @@
 
   </main>
 
-  <script src="app.js?v=6.0"></script>
+  <script src="app.js?v=7.0"></script>
 </body>
 </html>

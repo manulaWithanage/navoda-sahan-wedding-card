@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const musicToggle = document.getElementById("music-toggle");
   const musicLabel = document.getElementById("music-label");
 
-  let isPlayingMusic = false;
+  let isPlayingMusic = true; // Default PLAYING
 
   function updateMusicUI(playing) {
     if (!musicToggle) return;
@@ -39,22 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const musicContainer = document.querySelector(".floating-music-container");
-
-  function showMusicWidget() {
-    if (musicContainer) {
-      musicContainer.classList.add("is-visible");
-    }
-  }
-
   function startAudio() {
-    if (!bgMusic || isPlayingMusic) return;
+    if (!bgMusic) return;
     bgMusic.play().then(() => {
       isPlayingMusic = true;
       updateMusicUI(true);
-      showMusicWidget();
     }).catch(err => {
-      console.log("Audio autoplay waiting for user interaction:", err);
+      console.log("Audio waiting for first interaction:", err);
+      // Keep UI in PLAYING state
+      updateMusicUI(true);
     });
   }
 
@@ -81,10 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attempt autoplay immediately on page load
   startAudio();
 
-  // Also bind to very first interaction on the page to start sound seamlessly
+  // Also bind to very first interaction anywhere on the screen so audio starts immediately
   const enableAudioOnFirstGesture = () => {
-    if (!isPlayingMusic) {
-      startAudio();
+    if (bgMusic && isPlayingMusic) {
+      bgMusic.play().catch(() => {});
     }
     window.removeEventListener("click", enableAudioOnFirstGesture);
     window.removeEventListener("touchstart", enableAudioOnFirstGesture);
@@ -109,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log("Play error:", err);
         });
       }
-      showMusicWidget();
 
       // 3. Remove gate after animation finishes
       setTimeout(() => {
