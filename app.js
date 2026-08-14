@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCountdown();
 
   // ==========================================
-  // 3. FALLING PETALS CANVAS
+  // 3. FALLING PETALS CANVAS (Gentle Luxury Drift)
   // ==========================================
   function initPetals() {
     const canvas = document.getElementById("petals-canvas");
@@ -141,20 +141,31 @@ document.addEventListener("DOMContentLoaded", () => {
       height = canvas.height = window.innerHeight;
     });
 
-    const petalCount = window.innerWidth < 768 ? 12 : 24;
+    const petalCount = window.innerWidth < 768 ? 14 : 26;
     const petals = [];
+
+    // Soft Romantic Palette: Ivory, Champagne, and Blush Rose
+    const petalColors = [
+      "rgba(255, 253, 248, 0.70)", // Luminous ivory
+      "rgba(229, 207, 152, 0.65)", // Champagne gold
+      "rgba(244, 226, 222, 0.55)", // Soft blush rose
+      "rgba(216, 190, 132, 0.50)"  // Warm gold
+    ];
 
     for (let i = 0; i < petalCount; i++) {
       petals.push({
         x: Math.random() * width,
-        y: Math.random() * height - height,
-        size: Math.random() * 8 + 6,
-        speedY: Math.random() * 1.2 + 0.8,
-        speedX: Math.random() * 0.6 - 0.3,
-        rotation: Math.random() * Math.PI * 2,
-        rotationSpeed: Math.random() * 0.02 - 0.01,
-        opacity: Math.random() * 0.4 + 0.3,
-        color: Math.random() > 0.4 ? "#FFFDF8" : "#E5C98B"
+        y: Math.random() * height,
+        size: Math.random() * 6 + 5,
+        speedY: Math.random() * 0.35 + 0.30, // Ultra-gentle, slow romantic descent
+        speedX: Math.random() * 0.2 - 0.1,
+        swaySpeed: Math.random() * 0.012 + 0.006,
+        swayAngle: Math.random() * Math.PI * 2,
+        swayRange: Math.random() * 1.2 + 0.6,
+        tilt: Math.random() * Math.PI,
+        tiltSpeed: Math.random() * 0.012 + 0.006,
+        opacity: Math.random() * 0.35 + 0.3,
+        color: petalColors[Math.floor(Math.random() * petalColors.length)]
       });
     }
 
@@ -163,22 +174,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       petals.forEach(p => {
         p.y += p.speedY;
-        p.x += Math.sin(p.y * 0.01) * 0.5 + p.speedX;
-        p.rotation += p.rotationSpeed;
+        p.swayAngle += p.swaySpeed;
+        p.x += Math.sin(p.swayAngle) * p.swayRange + p.speedX;
+        p.tilt += p.tiltSpeed;
 
-        if (p.y > height) {
+        // Reset past bottom
+        if (p.y > height + 20) {
           p.y = -20;
           p.x = Math.random() * width;
         }
+        // Wrap horizontally
+        if (p.x > width + 20) p.x = -20;
+        if (p.x < -20) p.x = width + 20;
 
         ctx.save();
         ctx.translate(p.x, p.y);
-        ctx.rotate(p.rotation);
+        ctx.rotate(p.swayAngle * 0.5);
+        ctx.scale(1, Math.cos(p.tilt) * 0.85); // Organic 3D tumbling illusion
         ctx.globalAlpha = p.opacity;
         ctx.fillStyle = p.color;
 
+        // Organic petal shape
         ctx.beginPath();
-        ctx.ellipse(0, 0, p.size, p.size * 0.6, 0, 0, Math.PI * 2);
+        ctx.ellipse(0, 0, p.size, p.size * 0.55, Math.PI / 4, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.restore();
