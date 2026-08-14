@@ -207,10 +207,35 @@ body {
 }
 
 .gate-heart-icon { margin-bottom: 12px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
-.gate-tagline { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 4px; color: var(--gold-light); margin-bottom: 12px; }
-.gate-couple-names { font-family: var(--font-cinzel); font-size: 2.2rem; color: var(--bg-creme); line-height: 1.2; margin-bottom: 10px; }
-.gate-couple-names .gate-amp { font-family: var(--font-script); color: var(--gold-primary); font-size: 1.6rem; margin: 0 6px; }
-.gate-subtext { font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: rgba(253, 251, 247, 0.85); margin-bottom: 30px; }
+.gate-tagline { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 4px; color: var(--gold-light); margin-bottom: 12px; }
+.gate-couple-names {
+  font-family: var(--font-cinzel);
+  color: var(--bg-creme);
+  margin: 6px 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.gate-couple-names .name-line {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: #FFFDF8;
+}
+.gate-couple-names .name-and {
+  font-family: var(--font-script);
+  color: var(--gold-primary);
+  font-size: 1.7rem;
+  font-style: normal;
+  text-transform: lowercase;
+  margin: -2px 0;
+  line-height: 1;
+}
+.gate-subtext { font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: rgba(253, 251, 247, 0.85); margin-bottom: 26px; }
 
 .wax-seal-btn {
   position: relative;
@@ -1093,8 +1118,11 @@ body {
     padding: 32px 18px;
     border-radius: 20px;
   }
-  .gate-couple-names {
-    font-size: 1.8rem;
+  .gate-couple-names .name-line {
+    font-size: 1.85rem;
+  }
+  .gate-couple-names .name-and {
+    font-size: 1.5rem;
   }
   .wax-seal-btn {
     padding: 14px 28px;
