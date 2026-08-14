@@ -39,6 +39,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function startAudio() {
+    if (!bgMusic || isPlayingMusic) return;
+    bgMusic.play().then(() => {
+      isPlayingMusic = true;
+      updateMusicUI(true);
+    }).catch(err => {
+      console.log("Audio autoplay waiting for user interaction:", err);
+      updateMusicUI(false);
+    });
+  }
+
   function toggleMusic(e) {
     if (e) {
       e.stopPropagation();
@@ -59,21 +70,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Attempt autoplay immediately on page load
+  startAudio();
+
+  // Also bind to very first interaction on the page to start sound seamlessly
+  const enableAudioOnFirstGesture = () => {
+    if (!isPlayingMusic) {
+      startAudio();
+    }
+    window.removeEventListener("click", enableAudioOnFirstGesture);
+    window.removeEventListener("touchstart", enableAudioOnFirstGesture);
+    window.removeEventListener("scroll", enableAudioOnFirstGesture);
+  };
+
+  window.addEventListener("click", enableAudioOnFirstGesture, { once: true, passive: true });
+  window.addEventListener("touchstart", enableAudioOnFirstGesture, { once: true, passive: true });
+  window.addEventListener("scroll", enableAudioOnFirstGesture, { once: true, passive: true });
+
   if (waxBtn && gate) {
     waxBtn.addEventListener("click", () => {
       // 1. Trigger door slide
       gate.classList.add("gate-open");
       
-      // 2. Try playing background music
-      if (bgMusic) {
-        bgMusic.play().then(() => {
-          isPlayingMusic = true;
-          updateMusicUI(true);
-        }).catch(err => {
-          console.log("Autoplay blocked:", err);
-          updateMusicUI(false);
-        });
-      }
+      // 2. Play background music
+      startAudio();
 
       // 3. Initialize Petal Canvas
       initPetals();
