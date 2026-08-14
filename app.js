@@ -84,6 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("click", startAudioOnFirstTouch, { once: true, passive: true });
   window.addEventListener("touchstart", startAudioOnFirstTouch, { once: true, passive: true });
 
+  const musicContainer = document.querySelector(".floating-music-container");
+
+  function showMusicWidget() {
+    if (musicContainer) {
+      musicContainer.classList.add("is-visible");
+    }
+  }
+
   if (waxBtn && gate) {
     waxBtn.addEventListener("click", () => {
       // 1. Trigger door slide
@@ -91,18 +99,22 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // 2. Guaranteed audio play on tap
       if (bgMusic) {
-        bgMusic.play().catch(err => console.log("Play error:", err));
+        bgMusic.play().then(() => {
+          updateMusicUI(true);
+        }).catch(err => console.log("Play error:", err));
       }
 
-      // 3. Remove gate after animation finishes
+      // 3. Smoothly reveal floating music player
+      showMusicWidget();
+
+      // 4. Initialize Petal Canvas
+      initPetals();
+
+      // 5. Remove gate after animation finishes
       setTimeout(() => {
         gate.style.display = "none";
       }, 1200);
     });
-  }
-
-  if (musicToggle) {
-    musicToggle.addEventListener("click", toggleMusic);
   }
 
   // ==========================================
