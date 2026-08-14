@@ -891,20 +891,360 @@ body {
 
 
 /* ==========================================
-   11. RESPONSIVE BREAKPOINTS
+   11. COMPREHENSIVE MOBILE RESPONSIVE SYSTEM
    ========================================== */
 @media (max-width: 900px) {
-  .hero-grid, .story-grid, .location-grid { grid-template-columns: 1fr; gap: 32px; }
-  .details-cards-grid { grid-template-columns: 1fr; }
-  .mocha-gallery-grid { grid-template-columns: 1fr 1fr; }
+  .hero-grid, .story-grid, .location-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .details-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .mocha-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
   .hero-text-card { order: 2; }
-  .hero-photo-frame { order: 1; }
+  .hero-photo-frame {
+    order: 1;
+    max-width: 360px;
+  }
 }
 
 @media (max-width: 600px) {
-  .nav-links { display: none; }
-  .hero-couple-names .name-line { font-size: 2.8rem; }
-  .timer-grid { grid-template-columns: repeat(2, 1fr); }
-  .form-row { flex-direction: column; gap: 12px; }
-  .bottom-contacts { flex-direction: column; gap: 10px; }
+  /* Navigation */
+  .navbar {
+    padding: 10px 16px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  .music-toggle {
+    padding: 5px 10px;
+    font-size: 0.6rem;
+  }
+
+  /* Main Container */
+  .main-content {
+    padding: 16px 12px 40px 12px;
+  }
+
+  /* Gate Overlay */
+  .gate-content {
+    padding: 16px;
+    max-width: 92%;
+  }
+  .gate-card {
+    padding: 32px 18px;
+    border-radius: 20px;
+  }
+  .gate-couple-names {
+    font-size: 1.8rem;
+  }
+  .wax-seal-btn {
+    padding: 14px 28px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 10px 0 40px 0;
+  }
+  .hero-photo-frame {
+    max-width: 290px;
+    border-radius: 180px 180px 14px 14px;
+  }
+  .hero-photo-frame .inner-arch-border {
+    border-radius: 172px 172px 10px 10px;
+    inset: 8px;
+  }
+  .hero-text-card {
+    padding: 36px 18px 28px 18px;
+    border-radius: 24px;
+  }
+  .hero-inner-border {
+    inset: 8px;
+    border-radius: 18px;
+  }
+  .hero-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+  }
+  .hero-couple-names {
+    margin: 10px 0;
+  }
+  .hero-couple-names .name-line {
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+  }
+  .hero-couple-names .name-and {
+    font-size: 1.8rem;
+    margin: -2px 0;
+  }
+  .hero-invite-text {
+    font-size: 0.88rem;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .hero-wedding-day {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+  .hero-wedding-venue {
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+  }
+  .hero-wedding-location {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+  .hero-footer-bar {
+    font-size: 0.58rem;
+    letter-spacing: 1.5px;
+    padding-top: 14px;
+  }
+
+  /* Countdown Banner */
+  .countdown-section {
+    padding: 40px 14px;
+    border-radius: 16px;
+    margin-bottom: 50px;
+  }
+  .countdown-sub {
+    font-size: 2rem;
+  }
+  .countdown-heading {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+  .timer-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+  .timer-card {
+    padding: 6px 2px;
+    border-radius: 10px;
+  }
+  .timer-val {
+    font-size: 1.6rem;
+  }
+  .timer-line {
+    width: 16px;
+    margin: 4px 0;
+  }
+  .timer-lbl {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+  }
+  .countdown-target {
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* Section Headings */
+  .section-header-box {
+    margin-bottom: 24px;
+  }
+  .section-sub {
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+  }
+  .section-heading {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+  }
+  .section-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Story Section */
+  .story-section {
+    margin-bottom: 50px;
+  }
+  .story-grid {
+    padding: 28px 16px;
+    border-radius: 20px;
+    gap: 24px;
+  }
+  .story-photo-arch {
+    max-width: 260px;
+    border-radius: 160px 160px 14px 14px;
+  }
+  .timeline-container {
+    gap: 18px;
+  }
+  .timeline-item {
+    gap: 12px;
+  }
+  .timeline-year {
+    font-size: 1.15rem;
+    min-width: 48px;
+  }
+  .timeline-title {
+    font-size: 1.05rem;
+  }
+  .timeline-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* Details Section */
+  .details-section {
+    margin-bottom: 50px;
+  }
+  .details-cards-grid {
+    gap: 20px;
+    max-width: 320px;
+  }
+  .detail-arch-card {
+    padding: 40px 18px 28px 18px;
+    border-radius: 160px 160px 16px 16px;
+    aspect-ratio: auto;
+  }
+  .detail-card-title {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+  .detail-card-time {
+    font-size: 1.5rem;
+  }
+  .detail-card-venue {
+    font-size: 0.68rem;
+  }
+  .detail-card-sub {
+    font-size: 0.82rem;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    margin-bottom: 50px;
+  }
+  .mocha-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .item-tall-arch {
+    border-radius: 80px 80px 10px 10px;
+  }
+  .item-square {
+    border-radius: 10px;
+  }
+
+  /* Location Section */
+  .venue-section {
+    margin-bottom: 50px;
+  }
+  .location-grid {
+    gap: 20px;
+  }
+  .location-info-card {
+    padding: 30px 16px;
+    border-radius: 120px 120px 18px 18px;
+  }
+  .loc-venue-name {
+    font-size: 1.15rem;
+  }
+  .loc-address {
+    font-size: 0.68rem;
+  }
+  .loc-desc {
+    font-size: 0.88rem;
+  }
+  .map-btn {
+    padding: 12px 24px;
+    font-size: 0.68rem;
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+
+  /* RSVP Section */
+  .rsvp-section {
+    margin-bottom: 50px;
+  }
+  .rsvp-arch-card {
+    padding: 70px 16px 36px 16px;
+    border-radius: 180px 180px 20px 20px;
+    max-width: 100%;
+  }
+  .rsvp-arch-card .inner-arch-border {
+    inset: 8px;
+    border-radius: 172px 172px 14px 14px;
+  }
+  .rsvp-form {
+    max-width: 100%;
+    gap: 14px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .form-input, .form-select, .form-textarea {
+    font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+    padding: 11px 12px;
+    border-radius: 10px;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.72rem;
+  }
+
+  /* Bottom Mocha Banner */
+  .bottom-banner-section {
+    margin-bottom: 24px;
+  }
+  .bottom-mocha-card {
+    padding: 36px 16px;
+    border-radius: 20px;
+  }
+  .bottom-date {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+  .bottom-names {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  .bottom-venue {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+  }
+  .bottom-contacts {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-pill-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.68rem;
+    padding: 11px 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-couple-names .name-line {
+    font-size: 2.1rem;
+  }
+  .timer-val {
+    font-size: 1.35rem;
+  }
+  .timer-lbl {
+    font-size: 0.45rem;
+  }
 }
