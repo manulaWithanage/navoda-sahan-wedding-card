@@ -955,34 +955,56 @@ body {
 
   /* Hero Section */
   .hero-section {
-    padding: 10px 0 40px 0;
+    padding: 10px 0 35px 0;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto;
+    position: relative;
   }
   .hero-photo-frame {
-    max-width: 290px;
-    border-radius: 180px 180px 14px 14px;
+    order: 1;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 4 / 5;
+    border-radius: 140px 140px 16px 16px;
+    box-shadow: 0 15px 35px -10px rgba(59, 37, 23, 0.25);
+    margin-bottom: -24px;
+    z-index: 5;
   }
   .hero-photo-frame .inner-arch-border {
-    border-radius: 172px 172px 10px 10px;
-    inset: 8px;
+    border-radius: 132px 132px 10px 10px;
+    inset: 7px;
   }
   .hero-text-card {
-    padding: 36px 18px 28px 18px;
-    border-radius: 24px;
+    order: 2;
+    width: 100%;
+    padding: 48px 20px 30px 20px;
+    border-radius: 30px;
+    background: #FFFDF8;
+    border: 1px solid rgba(199, 162, 75, 0.45);
+    box-shadow: 0 20px 50px -15px rgba(59, 37, 23, 0.16);
+    position: relative;
+    z-index: 1;
   }
   .hero-inner-border {
     inset: 8px;
-    border-radius: 18px;
+    border-radius: 22px;
   }
   .hero-tagline {
     font-size: 0.65rem;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 10px;
   }
   .hero-couple-names {
     margin: 10px 0;
   }
   .hero-couple-names .name-line {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     letter-spacing: 1.5px;
   }
   .hero-couple-names .name-and {
@@ -996,15 +1018,15 @@ body {
     margin-bottom: 16px;
   }
   .hero-wedding-day {
-    font-size: 1rem;
+    font-size: 1.05rem;
     letter-spacing: 2px;
   }
   .hero-wedding-venue {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     letter-spacing: 1.5px;
   }
   .hero-wedding-location {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     letter-spacing: 2px;
     margin-bottom: 18px;
   }
