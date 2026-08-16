@@ -1402,6 +1402,14 @@ body {
     font-size: 0.6rem;
   }
 
+  /* Mobile Backdrop (Custom 9:16 Vertical Flat-Lay) */
+  .mocha-fixed-backdrop {
+    background-image: linear-gradient(rgba(251, 248, 241, 0.32), rgba(251, 248, 241, 0.32)), url('assets/backdrop_mobile.jpg?v=1.0');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
   /* Main Container */
   .main-content {
     padding: 16px 12px 40px 12px;
