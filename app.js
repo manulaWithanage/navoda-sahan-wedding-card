@@ -369,4 +369,42 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollReveals.forEach(el => el.classList.add("active"));
   }
 
+  // ==========================================
+  // 6. MOBILE HAMBURGER NAVIGATION DRAWER
+  // ==========================================
+  const navHamburger = document.getElementById("nav-hamburger");
+  const mobileNavDrawer = document.getElementById("mobile-nav-drawer");
+  const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+  if (navHamburger && mobileNavDrawer) {
+    function toggleMobileMenu() {
+      const isOpen = mobileNavDrawer.classList.toggle("is-open");
+      navHamburger.classList.toggle("is-active");
+      navHamburger.setAttribute("aria-expanded", isOpen);
+    }
+
+    function closeMobileMenu() {
+      mobileNavDrawer.classList.remove("is-open");
+      navHamburger.classList.remove("is-active");
+      navHamburger.setAttribute("aria-expanded", "false");
+    }
+
+    navHamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        closeMobileMenu();
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!mobileNavDrawer.contains(e.target) && !navHamburger.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+  }
+
 });

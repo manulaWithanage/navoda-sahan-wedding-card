@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Mea+Culpa&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <!-- Stylesheet (cache-busting version) -->
-  <link rel="stylesheet" href="index.css?v=24.0">
+  <link rel="stylesheet" href="index.css?v=25.0">
 </head>
 <body>
 
@@ -109,7 +109,7 @@
   <!-- Falling Petals Canvas -->
   <canvas id="petals-canvas" class="petals-canvas" aria-hidden="true"></canvas>
 
-  <!-- Sticky Navbar (Clean Luxury Centered Layout) -->
+  <!-- Sticky Navbar (Clean Luxury Layout with Mobile Hamburger) -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">
@@ -123,7 +123,26 @@
         <a href="#venue">Location</a>
         <a href="#rsvp">RSVP</a>
       </nav>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button type="button" class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line line-1"></span>
+        <span class="hamburger-line line-2"></span>
+        <span class="hamburger-line line-3"></span>
+      </button>
     </div>
+
+    <!-- Mobile Navigation Dropdown Drawer -->
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link"><span class="nav-dot">✦</span> Home</a>
+        <a href="#story" class="mobile-nav-link"><span class="nav-dot">✦</span> Our Story</a>
+        <a href="#events" class="mobile-nav-link"><span class="nav-dot">✦</span> Event Details</a>
+        <a href="#gallery" class="mobile-nav-link"><span class="nav-dot">✦</span> Photo Gallery</a>
+        <a href="#venue" class="mobile-nav-link"><span class="nav-dot">✦</span> Venue Location</a>
+        <a href="#rsvp" class="mobile-nav-link mobile-nav-rsvp"><span class="nav-dot">✦</span> Will You Join Us (RSVP)</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Floating Bottom-Right Corner Music Widget -->
@@ -496,6 +515,6 @@
 
   </main>
 
-  <script src="app.js?v=12.0"></script>
+  <script src="app.js?v=13.0"></script>
 </body>
 </html>
