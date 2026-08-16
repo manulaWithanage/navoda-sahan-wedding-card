@@ -12,13 +12,18 @@ const WEDDING_DATE = new Date("September 24, 2026 10:00:00").getTime();
 document.addEventListener("DOMContentLoaded", () => {
 
   // ==========================================
-  // 1. ENTRANCE GATE & AUDIO PLAYBACK
+  // ==========================================
+  // 1. ENTRANCE GATE & AUDIO PLAYBACK (STANDARDS-COMPLIANT)
   // ==========================================
   const gate = document.getElementById("envelope-gate");
   const waxBtn = document.getElementById("wax-seal-btn");
   const bgMusic = document.getElementById("bg-music");
   const musicToggle = document.getElementById("music-toggle");
   const musicLabel = document.getElementById("music-label");
+  const musicContainer = document.querySelector(".floating-music-container");
+
+  let userManuallyMuted = false;
+  let wasPlayingBeforeHidden = false;
 
   function updateMusicUI(playing) {
     if (!musicToggle) return;
@@ -37,32 +42,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function fadeInAudio(targetVolume = 0.85, duration = 800) {
+    if (!bgMusic) return;
+    bgMusic.volume = 0;
+    bgMusic.play().then(() => {
+      updateMusicUI(true);
+      const step = targetVolume / (duration / 50);
+      const fadeInterval = setInterval(() => {
+        if (!bgMusic || bgMusic.paused) {
+          clearInterval(fadeInterval);
+          return;
+        }
+        if (bgMusic.volume + step < targetVolume) {
+          bgMusic.volume = Math.min(targetVolume, bgMusic.volume + step);
+        } else {
+          bgMusic.volume = targetVolume;
+          clearInterval(fadeInterval);
+        }
+      }, 50);
+    }).catch(err => {
+      console.log("Autoplay waiting for user tap:", err);
+      updateMusicUI(false);
+    });
+  }
+
   if (bgMusic) {
-    bgMusic.volume = 1.0;
+    bgMusic.volume = 0.85;
     bgMusic.addEventListener("play", () => updateMusicUI(true));
     bgMusic.addEventListener("pause", () => updateMusicUI(false));
     bgMusic.addEventListener("ended", () => updateMusicUI(false));
   }
 
-  function playAudio() {
-    if (!bgMusic) return;
-    bgMusic.play().then(() => {
-      updateMusicUI(true);
-    }).catch(err => {
-      console.log("Autoplay waiting for first touch:", err);
-      updateMusicUI(false);
-    });
-  }
-
   function toggleMusic(e) {
-    if (e) {
-      e.stopPropagation();
-    }
+    if (e) e.stopPropagation();
     if (!bgMusic) return;
     
     if (bgMusic.paused) {
+      userManuallyMuted = false;
       bgMusic.play().catch(err => console.log("Play error:", err));
     } else {
+      userManuallyMuted = true;
       bgMusic.pause();
     }
   }
@@ -71,20 +90,37 @@ document.addEventListener("DOMContentLoaded", () => {
     musicToggle.addEventListener("click", toggleMusic);
   }
 
-  // Attempt autoplay immediately
-  playAudio();
+  // 1. Mobile & Web Standard: Page Visibility API (Auto-pause on app switch, tab change, phone lock)
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      if (bgMusic && !bgMusic.paused) {
+        wasPlayingBeforeHidden = true;
+        bgMusic.pause();
+      }
+    } else {
+      if (wasPlayingBeforeHidden && !userManuallyMuted && bgMusic && bgMusic.paused) {
+        bgMusic.play().catch(() => {});
+      }
+      wasPlayingBeforeHidden = false;
+    }
+  });
 
-  // On any first click or tap anywhere, immediately start audio
+  // 2. Mobile & Web Standard: Page Lifecycle & Close events (Stop immediately on close or navigate away)
+  window.addEventListener("pagehide", () => {
+    if (bgMusic) bgMusic.pause();
+  });
+  window.addEventListener("beforeunload", () => {
+    if (bgMusic) bgMusic.pause();
+  });
+
+  // 3. Fallback: User first-touch audio start
   const startAudioOnFirstTouch = () => {
-    if (bgMusic && bgMusic.paused) {
+    if (bgMusic && bgMusic.paused && !userManuallyMuted) {
       bgMusic.play().catch(() => {});
     }
   };
-
   window.addEventListener("click", startAudioOnFirstTouch, { once: true, passive: true });
   window.addEventListener("touchstart", startAudioOnFirstTouch, { once: true, passive: true });
-
-  const musicContainer = document.querySelector(".floating-music-container");
 
   function showMusicWidget() {
     if (musicContainer) {
@@ -97,11 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // 1. Trigger door slide
       gate.classList.add("gate-open");
       
-      // 2. Guaranteed audio play on tap
-      if (bgMusic) {
-        bgMusic.play().then(() => {
-          updateMusicUI(true);
-        }).catch(err => console.log("Play error:", err));
+      // 2. Guaranteed smooth audio play with fade-in on tap
+      if (bgMusic && !userManuallyMuted) {
+        fadeInAudio(0.85, 700);
       }
 
       // 3. Smoothly reveal floating music player
