@@ -4,7 +4,7 @@
  */
 
 // Configurable Google Sheets Web App Endpoint URL for RSVPs
-const GOOGLE_SHEETS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxlva6t0mOp-ZxXgiEQkk83bor-LYeSXvZDS0c6UxIHpdmvi2csPXv0Yz8S-kyolwkRQg/exec";
+const GOOGLE_SHEETS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZm2KdJOLVbYwRTQ-qPOK9V8FC45YSruS4KlL_-dfIJVd9OGAIiOHfqd6WXIzepKrQ/exec";
 
 // Wedding Date: September 24, 2026 at 10:00 AM
 const WEDDING_DATE = new Date("September 24, 2026 10:00:00").getTime();
