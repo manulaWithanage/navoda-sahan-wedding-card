@@ -1288,6 +1288,57 @@ body {
   transform: scale(1.15) rotate(5deg);
 }
 
+/* ==========================================
+   SITE FOOTER & DEVELOPER CREDIT
+   ========================================== */
+.site-footer {
+  text-align: center;
+  padding: 36px 20px 48px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 220px;
+  margin: 0 auto 14px auto;
+}
+
+.footer-divider .line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 162, 75, 0.45), transparent);
+}
+
+.footer-divider .star {
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.footer-credit {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.footer-brand {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-mocha);
+  transition: color 0.3s ease;
+}
+
+.footer-brand:hover {
+  color: var(--gold-dark);
+}
+
 .contact-role {
   color: var(--gold-light);
   font-weight: 700;
