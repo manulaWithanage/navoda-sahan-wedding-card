@@ -1363,6 +1363,74 @@ body {
 
 
 /* ==========================================
+   10. LUXURY SCROLL REVEAL & MOTION ANIMATIONS
+   ========================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.985);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered Countdown Timer Flip-In */
+.scroll-reveal .timer-card {
+  opacity: 0;
+  transform: translateY(18px) scale(0.94);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.active .timer-card:nth-child(1) { transition-delay: 0.10s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .timer-card:nth-child(2) { transition-delay: 0.20s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .timer-card:nth-child(3) { transition-delay: 0.30s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .timer-card:nth-child(4) { transition-delay: 0.40s; opacity: 1; transform: translateY(0) scale(1); }
+
+/* Staggered Our Story Milestones */
+.scroll-reveal .timeline-item {
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.active .timeline-item:nth-child(1) { transition-delay: 0.15s; opacity: 1; transform: translateX(0); }
+.scroll-reveal.active .timeline-item:nth-child(2) { transition-delay: 0.30s; opacity: 1; transform: translateX(0); }
+.scroll-reveal.active .timeline-item:nth-child(3) { transition-delay: 0.45s; opacity: 1; transform: translateX(0); }
+.scroll-reveal.active .timeline-item:nth-child(4) { transition-delay: 0.60s; opacity: 1; transform: translateX(0); }
+
+/* Staggered Event Cards */
+.scroll-reveal .detail-arch-card {
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.active .detail-arch-card:nth-child(1) { transition-delay: 0.18s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .detail-arch-card:nth-child(2) { transition-delay: 0.35s; opacity: 1; transform: translateY(0) scale(1); }
+
+/* Staggered Photo Gallery Items */
+.scroll-reveal .gallery-item {
+  opacity: 0;
+  transform: translateY(22px) scale(0.96);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.active .gallery-item:nth-child(1) { transition-delay: 0.12s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .gallery-item:nth-child(2) { transition-delay: 0.24s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .gallery-item:nth-child(3) { transition-delay: 0.36s; opacity: 1; transform: translateY(0) scale(1); }
+.scroll-reveal.active .gallery-item:nth-child(4) { transition-delay: 0.48s; opacity: 1; transform: translateY(0) scale(1); }
+
+/* RSVP Arch Card Smooth Entrance */
+.scroll-reveal .rsvp-arch-card {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+.scroll-reveal.active .rsvp-arch-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ==========================================
    11. COMPREHENSIVE MOBILE RESPONSIVE SYSTEM
    ========================================== */
 @media (max-width: 900px) {
