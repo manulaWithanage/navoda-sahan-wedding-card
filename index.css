@@ -1834,23 +1834,38 @@ body {
     border-radius: 30px;
   }
 
-  /* Mobile Floating Music Player */
+  /* Mobile Floating Music Player: Minimalist, Subtle & Non-Distracting */
   .floating-music-container {
-    bottom: 18px;
-    right: 18px;
+    bottom: 16px;
+    right: 16px;
   }
   .floating-music-btn {
-    padding: 7px 14px 7px 8px;
-    gap: 8px;
-    box-shadow: 0 8px 24px rgba(20, 8, 16, 0.5);
+    padding: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 37, 23, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.2px solid rgba(216, 190, 132, 0.45);
+    box-shadow: 0 6px 18px rgba(20, 8, 16, 0.3);
+  }
+  .floating-music-btn .music-label {
+    display: none; /* Hide text label on mobile for clean, uncluttered look */
   }
   .music-disc {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
   }
-  .music-label {
-    font-size: 0.62rem;
-    letter-spacing: 1.5px;
+  .floating-music-btn.is-playing {
+    border-color: rgba(216, 190, 132, 0.7);
+    box-shadow: 0 6px 18px rgba(20, 8, 16, 0.3), 0 0 10px rgba(216, 190, 132, 0.25);
   }
 }
 
