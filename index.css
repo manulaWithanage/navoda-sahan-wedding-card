@@ -44,12 +44,17 @@ body {
 /* Fixed Flat-Lay Background (Matches Mocha Seal backdrop) */
 .mocha-fixed-backdrop {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   z-index: -1;
-  background-image: linear-gradient(rgba(251, 248, 241, 0.35), rgba(251, 248, 241, 0.35)), url('assets/backdrop.jpg?v=2.0');
+  pointer-events: none;
+  background-image: linear-gradient(rgba(251, 248, 241, 0.35), rgba(251, 248, 241, 0.35)), url('assets/backdrop.jpg?v=3.0');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* Global Gold Gradient Text Fill */
@@ -1470,12 +1475,20 @@ body {
     font-size: 0.6rem;
   }
 
-  /* Mobile Backdrop (Custom 9:16 Vertical Flat-Lay) */
+  /* Mobile Backdrop (Custom 9:16 Vertical Flat-Lay - Zero iOS Safari Zoom Bug) */
   .mocha-fixed-backdrop {
-    background-image: linear-gradient(rgba(251, 248, 241, 0.30), rgba(251, 248, 241, 0.30)), url('assets/backdrop_mobile.jpg?v=2.0');
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    z-index: -1;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(251, 248, 241, 0.26), rgba(251, 248, 241, 0.26)), url('assets/backdrop_mobile.jpg?v=3.0');
     background-size: cover;
     background-position: center top;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   /* Main Container */
