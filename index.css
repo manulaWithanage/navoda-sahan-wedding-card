@@ -41,7 +41,7 @@ body {
   min-height: 100vh;
 }
 
-/* Fixed Flat-Lay Background (Matches Mocha Seal backdrop) */
+/* Fixed Flat-Lay Background (Matches Mocha Seal backdrop - Desktop Landscape) */
 .mocha-fixed-backdrop {
   position: fixed;
   top: 0;
@@ -51,7 +51,7 @@ body {
   height: 100dvh;
   z-index: -1;
   pointer-events: none;
-  background-image: linear-gradient(rgba(251, 248, 241, 0.35), rgba(251, 248, 241, 0.35)), url('assets/backdrop.jpg?v=3.0');
+  background-image: linear-gradient(rgba(251, 248, 241, 0.35), rgba(251, 248, 241, 0.35)), url('assets/backdrop_desktop.jpg?v=4.0');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1630,7 +1630,7 @@ body {
     height: 100dvh;
     z-index: -1;
     pointer-events: none;
-    background-image: linear-gradient(rgba(251, 248, 241, 0.26), rgba(251, 248, 241, 0.26)), url('assets/backdrop_mobile.jpg?v=3.0');
+    background-image: linear-gradient(rgba(251, 248, 241, 0.26), rgba(251, 248, 241, 0.26)), url('assets/backdrop_mobile.jpg?v=4.0');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
