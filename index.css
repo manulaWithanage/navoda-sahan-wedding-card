@@ -1398,41 +1398,75 @@ body {
     padding: 16px 12px 40px 12px;
   }
 
-  /* Gate Overlay */
+  /* Header & Navigation on Mobile */
+  .sticky-header {
+    height: 52px;
+    padding: 0 16px;
+  }
+  .header-logo {
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+  }
+  .nav-links {
+    gap: 14px;
+  }
+  .nav-links a {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    padding: 6px 2px;
+  }
+
+  /* Gate Overlay on Mobile */
   .gate-content {
     padding: 16px;
-    max-width: 92%;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
   .gate-card {
-    padding: 40px 22px 32px 22px;
-    border-radius: 28px;
+    width: calc(100% - 24px);
+    max-width: 360px;
+    padding: 34px 18px 26px 18px;
+    border-radius: 24px;
+    margin: 0 auto;
   }
   .gate-tagline {
-    margin-bottom: 14px;
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
   }
   .gate-couple-names {
-    margin: 0 0 16px 0;
-    gap: 4px;
+    margin: 0 0 12px 0;
+    gap: 2px;
   }
   .gate-couple-names .name-line {
-    font-size: 1.95rem;
+    font-size: clamp(1.75rem, 6vw, 2.1rem);
     line-height: 1.15;
   }
   .gate-couple-names .name-and {
-    font-size: 1.55rem;
-    margin: 2px 0;
+    font-size: 1.45rem;
+    margin: 0;
     line-height: 1.1;
   }
   .gate-subtext {
-    margin-bottom: 24px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
   }
   .wax-seal-btn {
-    padding: 15px 32px;
-    font-size: 0.75rem;
+    padding: 13px 28px;
+    font-size: 0.74rem;
+    letter-spacing: 2px;
+    min-height: 48px;
+    width: 100%;
+    max-width: 280px;
+  }
+  .gate-hint {
+    font-size: 0.58rem;
     letter-spacing: 2.5px;
+    margin-top: 14px;
   }
 
-  /* Hero Section */
+  /* Hero Section on Mobile */
   .hero-section {
     padding: 10px 0 35px 0;
   }
@@ -1441,29 +1475,31 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0;
-    max-width: 440px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
   }
   .hero-photo-frame {
     order: 1;
     width: 100%;
-    max-width: 240px;
+    max-width: 250px;
     aspect-ratio: 4 / 5;
-    border-radius: 140px 140px 16px 16px;
-    box-shadow: 0 15px 35px -10px rgba(59, 37, 23, 0.25);
-    margin-bottom: -24px;
+    border-radius: 140px 140px 18px 18px;
+    box-shadow: 0 16px 36px -10px rgba(59, 37, 23, 0.28);
+    margin-bottom: -28px;
     z-index: 5;
   }
   .hero-photo-frame .inner-arch-border {
-    border-radius: 132px 132px 10px 10px;
+    border-radius: 132px 132px 12px 12px;
     inset: 7px;
   }
   .hero-text-card {
     order: 2;
     width: 100%;
-    padding: 48px 20px 30px 20px;
-    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 48px 18px 28px 18px;
+    border-radius: 26px;
     background: #FFFDF8;
     border: 1px solid rgba(199, 162, 75, 0.45);
     box-shadow: 0 20px 50px -15px rgba(59, 37, 23, 0.16);
