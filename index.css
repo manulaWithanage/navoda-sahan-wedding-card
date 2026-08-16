@@ -46,7 +46,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-image: linear-gradient(rgba(251, 248, 241, 0.35), rgba(251, 248, 241, 0.35)), url('assets/backdrop.jpg');
+  background-image: linear-gradient(rgba(251, 248, 241, 0.35), rgba(251, 248, 241, 0.35)), url('assets/backdrop.jpg?v=2.0');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1404,7 +1404,7 @@ body {
 
   /* Mobile Backdrop (Custom 9:16 Vertical Flat-Lay) */
   .mocha-fixed-backdrop {
-    background-image: linear-gradient(rgba(251, 248, 241, 0.32), rgba(251, 248, 241, 0.32)), url('assets/backdrop_mobile.jpg?v=1.0');
+    background-image: linear-gradient(rgba(251, 248, 241, 0.30), rgba(251, 248, 241, 0.30)), url('assets/backdrop_mobile.jpg?v=2.0');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
