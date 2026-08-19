@@ -297,7 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const name = document.getElementById("guest-name").value.trim();
-      const guestCount = document.getElementById("guest-count").value;
+      const guestCountEl = document.getElementById("guest-count");
+      const guestCount = guestCountEl ? guestCountEl.value : "Attending";
       const attendance = document.getElementById("attendance").value;
       const message = document.getElementById("guest-message").value.trim();
 

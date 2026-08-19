@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Mea+Culpa&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   
   <!-- Stylesheet (cache-busting version) -->
-  <link rel="stylesheet" href="index.css?v=27.0">
+  <link rel="stylesheet" href="index.css?v=28.0">
 </head>
 <body>
 
@@ -445,23 +445,12 @@
             <input type="text" id="guest-name" name="name" class="form-input" placeholder="e.g. Mr. & Mrs. Perera" required>
           </div>
 
-          <div class="form-row">
-            <div class="form-group flex-1">
-              <label for="guest-count" class="form-label">NUMBER OF GUESTS</label>
-              <select id="guest-count" name="guest_count" class="form-select">
-                <option value="1 Guest">1 Guest</option>
-                <option value="2 Guests" selected>2 Guests</option>
-                <option value="3 Guests">3 Guests</option>
-                <option value="4+ Guests">4+ Guests</option>
-              </select>
-            </div>
-            <div class="form-group flex-1">
-              <label for="attendance" class="form-label">ATTENDANCE</label>
-              <select id="attendance" name="attendance" class="form-select">
-                <option value="Joyfully Accepts">Joyfully Accepts</option>
-                <option value="Regretfully Declines">Regretfully Declines</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="attendance" class="form-label">ATTENDANCE</label>
+            <select id="attendance" name="attendance" class="form-select">
+              <option value="Joyfully Accepts">Joyfully Accepts</option>
+              <option value="Regretfully Declines">Regretfully Declines</option>
+            </select>
           </div>
 
           <div class="form-group">
@@ -515,6 +504,6 @@
 
   </main>
 
-  <script src="app.js?v=13.0"></script>
+  <script src="app.js?v=14.0"></script>
 </body>
 </html>
